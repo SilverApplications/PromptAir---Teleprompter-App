@@ -1,0 +1,8 @@
+<resources>
+    <!-- Android-12+-Systemsplash nur als Anthrazit-Fläche; danach spielt das Intro (Logo-Zoom) in der App -->
+    <style name="Theme.PromptAir" parent="Base.Theme.PromptAir">
+        <item name="android:windowSplashScreenBackground">@color/anthrazit_900</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_blank</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">@color/anthrazit_900</item>
+    </style>
+</resources>

@@ -1,0 +1,46 @@
+PromptAir é um teleprompter que escuta você: enquanto você fala, o texto segue sua voz – palavra por palavra, no seu próprio ritmo. Se você hesita, ele espera. Se acelera, ele acompanha.
+
+Sem conta. Sem assinatura. Sem marca d’água. Sem limite de caracteres.
+
+CONTROLE POR VOZ
+• Texto segue a voz: a linha de leitura pula para a palavra que você está falando
+• Comandos de voz: “começa”, “para”, “mais rápido”, “mais devagar”, “do início”
+• Prioriza o reconhecimento no aparelho (Android 12 ou superior) – seu áudio fica com você
+• Rubricas entre <colchetes angulares> são puladas durante o acompanhamento
+
+CONTROLES COMO UM CONTROLE REMOTO
+• Direcional: reproduzir/pausar no centro, mais rápido e mais devagar, microfone e gravação à mão
+• Mude o tamanho da fonte com dois dedos, toque para pausar
+• Funciona com passadores Bluetooth e teclados
+• Gesto de deslizar para voltar
+
+CÂMERA E GRAVAÇÃO
+• Câmera frontal ou traseira atrás do texto semitransparente
+• Grava vídeo sem o texto sobreposto, direto em “Movies/PromptAir”
+• Sem marca d’água, sem limite de duração
+
+TOTALMENTE AJUSTÁVEL
+• Velocidade, tamanho da fonte, espaçamento, margens, fonte, alinhamento
+• Cor do texto e do fundo, linha de leitura e escurecimento de foco
+• Espelhamento horizontal e vertical para rigs de prompter
+• Contagem regressiva, loop, tela sempre ligada
+• Tempo restante e barra de progresso
+
+LEITURA EM VOZ ALTA
+• A voz offline do seu aparelho lê seu roteiro – para ensaiar e conferir o tempo
+• Escolha voz e velocidade, crie pausas com [pause] e [pause lang]
+• Compartilhe como arquivo WAV
+
+ROTEIROS
+• Quantos roteiros quiser, sem limite de tamanho
+• Abra arquivos .txt e salve como .txt onde preferir
+• Destaque com **negrito**
+
+SEIS IDIOMAS
+Interface e comandos de voz em português, inglês, alemão, espanhol, francês e italiano.
+
+PRIVADO POR DESIGN
+O PromptAir não tem permissão de internet. Roteiros, configurações e vídeos ficam só no seu aparelho – sem conta, sem servidor, sem anúncios, sem rastreamento.
+
+Um projeto da Silver Applications.
+Feedback e dúvidas: info@silverapplications.com

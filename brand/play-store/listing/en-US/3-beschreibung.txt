@@ -1,0 +1,46 @@
+PromptAir is a teleprompter that listens: while you speak, the text follows your voice – word by word, at your own pace. If you pause, it waits. If you speed up, it keeps up.
+
+No account. No subscription. No watermark. No character limit.
+
+VOICE CONTROL
+• Text follows voice: the reading line jumps to the word you are speaking
+• Voice commands: “start”, “stop”, “faster”, “slower”, “restart”
+• Prefers on-device recognition (Android 12 and later) – your audio stays with you
+• Stage directions in <angle brackets> are skipped while following
+
+REMOTE-STYLE CONTROLS
+• Control pad: play/pause in the centre, faster and slower, microphone and recording at your fingertips
+• Pinch with two fingers to change the font size, tap to pause
+• Works with Bluetooth presenters and keyboards
+• Swipe back to leave the prompter
+
+CAMERA AND RECORDING
+• Front or rear camera behind semi-transparent text
+• Records video without the overlay text, saved straight to “Movies/PromptAir”
+• No watermark, no length limit
+
+FULLY ADJUSTABLE
+• Speed, font size, line spacing, margins, font, alignment
+• Text and background colour, reading line and focus dimming
+• Horizontal and vertical mirroring for prompter rigs
+• Countdown, loop, keep screen on
+• Time remaining and progress bar
+
+READ ALOUD
+• Your device’s offline text-to-speech reads your script – for rehearsing and checking your timing
+• Choose voice and speed, add pauses with [pause] and [pause lang]
+• Share as a WAV file
+
+SCRIPTS
+• As many scripts as you like, no length limit
+• Load .txt files and save them as .txt wherever you choose
+• Emphasis with **bold**
+
+SIX LANGUAGES
+Interface and voice commands in English, German, Spanish, French, Portuguese and Italian.
+
+PRIVATE BY DESIGN
+PromptAir has no internet permission. Scripts, settings and videos stay on your device only – no account, no server, no ads, no tracking.
+
+A Silver Applications project.
+Feedback and questions: info@silverapplications.com

@@ -1,0 +1,88 @@
+/* ================= 1.1.0 ================= */
+/* ---------- Sichtbarkeit App / Browser ---------- */
+html:not(.in-app) .app-only{display:none!important}
+html.in-app .web-only{display:none!important}
+
+/* ---------- Startseite: Bedienleiste unten ---------- */
+#homeList{padding-bottom:120px}
+.homebar{position:fixed; left:0; right:0; bottom:0; z-index:5; display:flex; align-items:center; gap:10px;
+  padding:16px 16px calc(16px + env(safe-area-inset-bottom)); background:linear-gradient(transparent,var(--bg) 32%)}
+.homebar .spacer{flex:1}
+.homebar .btn{height:48px; padding:0 16px; white-space:nowrap}
+.homebar .iconbtn{width:48px; height:48px; flex:none}
+@media (max-width:390px){ .homebar{gap:8px; padding-left:12px; padding-right:12px} .homebar .btn{padding:0 11px; font-size:14px} }
+/* Schmale Handys: Knöpfe teilen sich die Breite, lange Beschriftungen (FR/IT/PT) brechen um statt überzustehen */
+@media (max-width:480px){ .homebar .spacer{display:none}
+  .homebar .btn{flex:1 1 0; min-width:0; white-space:normal; line-height:1.15; text-align:center; justify-content:center; padding:0 10px; font-size:14px}
+  .homebar .btn svg{flex:none} }
+
+/* ---------- Meldungen auf allen Bildschirmen sichtbar ---------- */
+#toast{position:fixed; z-index:60}
+
+/* ---------- Steuerkreuz (DVD-Fernbedienung) ---------- */
+#ctlbar{gap:16px; flex-wrap:nowrap; align-items:center;
+  padding:18px 12px calc(18px + env(safe-area-inset-bottom)); background:linear-gradient(transparent,rgba(0,0,0,.8) 35%)}
+.ctlside{display:flex; flex-direction:column; gap:10px}
+.dpad{--pad:180px; position:relative; flex:none; width:var(--pad); height:var(--pad);
+  background:rgba(14,16,18,.82); border:1px solid rgba(155,163,171,.35)}
+.dpad .seg{position:absolute; inset:0; border:0; padding:0; border-radius:0; background:rgba(58,65,72,.62); color:#F4F5F6; transition:background .15s}
+.dpad .seg:active{background:rgba(63,168,147,.5)}
+.dpad .seg svg{position:absolute; width:26px; height:26px; transform:translate(-50%,-50%); pointer-events:none}
+.seg.up{clip-path:polygon(5% 0,95% 0,65% 30%,35% 30%)}       .seg.up svg{left:50%; top:14%}
+.seg.down{clip-path:polygon(35% 70%,65% 70%,95% 100%,5% 100%)} .seg.down svg{left:50%; top:86%}
+.seg.left{clip-path:polygon(0 5%,30% 35%,30% 65%,0 95%)}       .seg.left svg{left:14%; top:50%}
+.seg.right{clip-path:polygon(100% 5%,100% 95%,70% 65%,70% 35%)} .seg.right svg{left:86%; top:50%}
+#btnMic.on{background:rgba(63,168,147,.55)}
+#btnRec{color:var(--red)}
+#btnRec.on{background:rgba(255,77,77,.38); color:#fff}
+.dpad .center{position:absolute; left:33%; top:33%; width:34%; height:34%; border:0; padding:0; border-radius:0;
+  background:#1D7A6E; color:#fff; display:grid; place-items:center}
+.dpad .center:active{background:var(--accent); color:var(--on-accent)}
+.dpad .center svg{width:32px; height:32px}
+@media (max-height:520px){
+  .dpad{--pad:138px} .dpad .seg svg{width:21px; height:21px} .dpad .center svg{width:26px; height:26px}
+  .ctlside{gap:6px} #ctlbar{padding-top:8px; padding-bottom:calc(8px + env(safe-area-inset-bottom))}
+}
+@media (min-width:720px) and (min-height:720px){ .dpad{--pad:212px} }
+
+/* ---------- Einstellungen: Rechtliches ---------- */
+.legal a{display:block; padding:12px 14px; margin-bottom:8px; border:1px solid var(--line); background:var(--panel2);
+  color:var(--txt); text-decoration:none; font-size:15px}
+.legal a:active{border-color:var(--accent)}
+.legal .ver{font:400 11.5px/1.4 'IBM Plex Mono',monospace; letter-spacing:.04em; color:var(--dim); margin:12px 0 0}
+
+/* ---------- Startsequenz (nur App) ---------- */
+#intro{display:none}
+html.intro #intro{display:block; position:fixed; inset:0; z-index:100; background:var(--bg); overflow:hidden; transition:opacity .45s ease}
+html.intro body{overflow:hidden}
+#intro.out{opacity:0; pointer-events:none}
+.intro-stage{position:absolute; inset:0; display:grid; place-items:center}
+.intro-tile{position:relative; width:min(60vw,62vh); aspect-ratio:1/1; overflow:hidden;
+  transform:scale(var(--s0,.16)); background:linear-gradient(145deg,#2A3036 0%,#1E2328 42%,#15181B 100%);
+  border:1px solid #3A4148; box-shadow:inset 0 1px 0 rgba(244,245,246,.06)}
+.intro-tile svg{position:absolute; inset:0; width:100%; height:100%; display:block}
+#intro.run .intro-tile{animation:introGrow 1.25s cubic-bezier(.16,1,.3,1) .12s both}
+@keyframes introGrow{from{transform:scale(var(--s0,.16))} to{transform:scale(1)}}
+.intro-tile .glint{position:absolute; inset:-50%; pointer-events:none; transform:translateX(-62%);
+  background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.12) 49%,rgba(255,255,255,.03) 55%,transparent 60%)}
+#intro.run .glint{animation:introGlint 1.15s cubic-bezier(.4,0,.2,1) 1.2s both}
+@keyframes introGlint{from{transform:translateX(-62%)} to{transform:translateX(62%)}}
+.intro-tile .sheen{transform:translateX(-80px)}
+#intro.run .sheen{animation:introSheen 1.05s cubic-bezier(.4,0,.2,1) 1.0s both}
+@keyframes introSheen{from{transform:translateX(-80px)} to{transform:translateX(150px)}}
+.intro-tile .spark{opacity:0; transform-box:fill-box; transform-origin:center}
+#intro.run .spark{animation:introSpark .85s ease-out both}
+#intro.run .spark.s1{animation-delay:1.45s} #intro.run .spark.s2{animation-delay:1.72s}
+#intro.run .spark.s3{animation-delay:1.98s} #intro.run .spark.s4{animation-delay:2.2s}
+@keyframes introSpark{0%{opacity:0; transform:scale(0) rotate(0deg)} 35%{opacity:1; transform:scale(1.15) rotate(40deg)} 100%{opacity:0; transform:scale(.2) rotate(90deg)}}
+.intro-sa{position:absolute; left:0; right:0; bottom:calc(34px + env(safe-area-inset-bottom)); display:flex; align-items:center;
+  justify-content:center; gap:10px; opacity:0; font:400 12.5px/1 'IBM Plex Sans',sans-serif; letter-spacing:.14em; color:#9BA3AB}
+.intro-sa b{color:#F4F5F6; font-weight:600}
+.intro-sa svg{width:24px; height:24px; display:block}
+#intro.run .intro-sa{animation:introFade .8s ease-out .55s both}
+@keyframes introFade{from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:none}}
+@media (prefers-reduced-motion:reduce){
+  #intro.run .intro-tile{animation:none; transform:none}
+  #intro.run .sheen,#intro.run .glint,#intro.run .spark{animation:none}
+  #intro.run .intro-sa{animation:none; opacity:1}
+}

@@ -1,0 +1,65 @@
+<resources>
+    <!-- Silver-Applications-Stil: Anthrazit, Petrol, Silber · scharfe Ecken · flache Flächen -->
+    <style name="Base.Theme.PromptAir" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/petrol_300</item>
+        <item name="colorOnPrimary">@color/on_accent</item>
+        <item name="colorPrimaryContainer">@color/petrol_500</item>
+        <item name="colorOnPrimaryContainer">@color/white</item>
+        <item name="colorSecondary">@color/petrol_500</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSurface">@color/anthrazit_700</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorOnSurfaceVariant">@color/silver_300</item>
+        <item name="colorSurfaceContainer">@color/anthrazit_700</item>
+        <item name="colorOutline">@color/graphit</item>
+        <item name="colorOutlineVariant">@color/graphit</item>
+        <item name="android:colorBackground">@color/anthrazit_900</item>
+        <item name="android:windowBackground">@color/anthrazit_900</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+
+        <!-- Keine abgerundeten Ecken – wie silverapplications.com -->
+        <item name="shapeAppearanceCornerExtraSmall">@style/ShapeAppearance.PromptAir.Square</item>
+        <item name="shapeAppearanceCornerSmall">@style/ShapeAppearance.PromptAir.Square</item>
+        <item name="shapeAppearanceCornerMedium">@style/ShapeAppearance.PromptAir.Square</item>
+        <item name="shapeAppearanceCornerLarge">@style/ShapeAppearance.PromptAir.Square</item>
+        <item name="shapeAppearanceCornerExtraLarge">@style/ShapeAppearance.PromptAir.Square</item>
+
+        <!-- Buttons: Primär = Petrol-Fläche mit weißer Schrift, Sekundär = Graphit-Rahmen -->
+        <item name="materialButtonStyle">@style/Widget.PromptAir.Button</item>
+        <item name="materialButtonOutlinedStyle">@style/Widget.PromptAir.Button.Outlined</item>
+    </style>
+
+    <style name="Theme.PromptAir" parent="Base.Theme.PromptAir" />
+
+    <!-- Unterseiten (Vorlesen, Lizenzen) mit Titelleiste und Zurück-Pfeil -->
+    <style name="Theme.PromptAir.WithBar" parent="Theme.PromptAir">
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">false</item>
+        <item name="actionBarTheme">@style/ThemeOverlay.PromptAir.ActionBar</item>
+    </style>
+
+    <style name="ThemeOverlay.PromptAir.ActionBar" parent="ThemeOverlay.Material3.Dark.ActionBar">
+        <item name="android:background">@color/anthrazit_700</item>
+        <item name="colorSurface">@color/anthrazit_700</item>
+    </style>
+
+    <style name="ShapeAppearance.PromptAir.Square" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">0dp</item>
+    </style>
+
+    <style name="Widget.PromptAir.Button" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/petrol_500</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.PromptAir.Square</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Widget.PromptAir.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/graphit</item>
+        <item name="android:textColor">@color/silver_100</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.PromptAir.Square</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+</resources>

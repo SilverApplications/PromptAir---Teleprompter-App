@@ -1,0 +1,46 @@
+PromptAir ist ein Teleprompter, der dir zuhört: Während du sprichst, folgt der Text deiner Stimme – Wort für Wort, in deinem eigenen Tempo. Stockst du, wartet er. Beschleunigst du, zieht er mit.
+
+Ohne Konto. Ohne Abo. Ohne Wasserzeichen. Ohne Zeichenbegrenzung.
+
+SPRACHSTEUERUNG
+• Text folgt der Stimme: Die Leselinie springt automatisch zu deinem gesprochenen Wort
+• Sprachbefehle: „Start“, „Stopp“, „schneller“, „langsamer“, „von vorn“
+• Erkennung bevorzugt direkt auf dem Gerät (ab Android 12) – dein Ton bleibt bei dir
+• Regieanweisungen in <spitzen Klammern> werden beim Mitlesen übersprungen
+
+STEUERUNG WIE EINE FERNBEDIENUNG
+• Steuerkreuz: Play/Pause in der Mitte, schneller und langsamer, Mikrofon und Aufnahme auf einen Griff
+• Schriftgröße mit zwei Fingern ändern, Tippen pausiert
+• Bluetooth-Presenter und Tastatur werden unterstützt
+• Zurück mit der Wischgeste
+
+KAMERA UND AUFNAHME
+• Front- oder Rückkamera hinter halbtransparentem Text
+• Videoaufnahme ohne eingeblendeten Text, direkt in „Filme/PromptAir“
+• Kein Wasserzeichen, keine Längenbegrenzung
+
+ALLES EINSTELLBAR
+• Tempo, Schriftgröße, Zeilenabstand, Ränder, Schriftart, Ausrichtung
+• Text- und Hintergrundfarbe, Leselinie und Fokus-Abdunklung
+• Horizontale und vertikale Spiegelung für Prompter-Rigs
+• Countdown, Endlosschleife, Bildschirm bleibt an
+• Restzeit-Anzeige und Fortschrittsbalken
+
+VORLESEN
+• Die Offline-Sprachausgabe deines Geräts liest dein Skript vor – zum Proben und zum Prüfen des Timings
+• Stimme und Tempo wählbar, Pausen mit [pause] und [pause lang]
+• Als WAV-Datei teilen
+
+SKRIPTE
+• Beliebig viele Skripte, ohne Längenlimit
+• .txt-Dateien laden und als .txt an einem Ort deiner Wahl speichern
+• Hervorhebungen mit **fett**
+
+SECHS SPRACHEN
+Oberfläche und Sprachbefehle auf Deutsch, Englisch, Spanisch, Französisch, Portugiesisch und Italienisch.
+
+PRIVAT BY DESIGN
+PromptAir hat keine Internet-Berechtigung. Skripte, Einstellungen und Videos bleiben ausschließlich auf deinem Gerät – kein Konto, kein Server, keine Werbung, kein Tracking.
+
+Ein Projekt von Silver Applications.
+Feedback und Fragen: info@silverapplications.com

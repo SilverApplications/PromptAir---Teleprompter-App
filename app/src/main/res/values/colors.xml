@@ -1,0 +1,13 @@
+<resources>
+    <!-- Silver Applications: Anthrazit + Petrol + Silber -->
+    <color name="anthrazit_900">#FF15181B</color>
+    <color name="anthrazit_700">#FF1E2328</color>
+    <color name="graphit">#FF3A4148</color>
+    <color name="silver_300">#FF9BA3AB</color>
+    <color name="silver_100">#FFD9DDE1</color>
+    <color name="white">#FFF4F5F6</color>
+    <color name="petrol_500">#FF1D7A6E</color>
+    <color name="petrol_300">#FF3FA893</color>
+    <color name="tanne">#FF123F39</color>
+    <color name="on_accent">#FF0E1012</color>
+</resources>

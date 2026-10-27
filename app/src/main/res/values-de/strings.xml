@@ -1,0 +1,16 @@
+<resources>
+    <!-- Nur native Bildschirme (Vorlesen, Lizenzen). Die Prompter-Oberfläche übersetzt sich selbst (assets/promptair.html). -->
+    <string name="speak_title">Vorlesen</string>
+    <string name="speak_hint">Text hier eingeben … [pause] und [pause lang] erzeugen Sprechpausen.</string>
+    <string name="voice_label">Stimme</string>
+    <string name="btn_say">Vorlesen</string>
+    <string name="btn_stop">Stopp</string>
+    <string name="btn_export">Als WAV</string>
+    <string name="no_voices">Keine Offline-Stimme für diese Sprache gefunden.</string>
+    <string name="rate_label">Tempo: %.2f×</string>
+    <string name="rate_default">Tempo: 1,00×</string>
+    <string name="export_failed">Export fehlgeschlagen.</string>
+    <string name="share_audio">Audio teilen</string>
+    <string name="ai_notice">Hinweis: Die Sprachausgabe ist synthetisch erzeugt.</string>
+    <string name="licenses_title">Lizenzen &amp; Quellcode</string>
+</resources>

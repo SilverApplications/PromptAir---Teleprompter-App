@@ -1,0 +1,46 @@
+PromptAir è un teleprompter che ti ascolta: mentre parli, il testo segue la tua voce – parola per parola, al tuo ritmo. Se esiti, aspetta. Se acceleri, ti segue.
+
+Nessun account. Nessun abbonamento. Nessuna filigrana. Nessun limite di caratteri.
+
+COMANDO VOCALE
+• Il testo segue la voce: la linea di lettura salta alla parola che stai pronunciando
+• Comandi vocali: «via», «stop», «più veloce», «più lento», «da capo»
+• Preferisce il riconoscimento sul dispositivo (Android 12 e successivi) – il tuo audio resta con te
+• Le indicazioni tra <parentesi angolari> vengono saltate durante il segui-voce
+
+COMANDI COME UN TELECOMANDO
+• Croce direzionale: play/pausa al centro, più veloce e più lento, microfono e registrazione a portata di mano
+• Dimensione del testo con due dita, tocca per mettere in pausa
+• Compatibile con presenter Bluetooth e tastiere
+• Gesto di scorrimento per tornare indietro
+
+FOTOCAMERA E REGISTRAZIONE
+• Fotocamera frontale o posteriore dietro il testo semitrasparente
+• Registra video senza il testo sovrapposto, direttamente in «Movies/PromptAir»
+• Nessuna filigrana, nessun limite di durata
+
+TUTTO REGOLABILE
+• Velocità, dimensione del testo, interlinea, margini, carattere, allineamento
+• Colore del testo e dello sfondo, linea di lettura e oscuramento
+• Specchiatura orizzontale e verticale per rig da prompter
+• Conto alla rovescia, loop, schermo sempre acceso
+• Tempo rimanente e barra di avanzamento
+
+LETTURA AD ALTA VOCE
+• La sintesi vocale offline del tuo dispositivo legge il tuo copione – per provare e controllare i tempi
+• Scegli voce e velocità, aggiungi pause con [pause] e [pause lang]
+• Condividi come file WAV
+
+COPIONI
+• Tutti i copioni che vuoi, senza limiti di lunghezza
+• Apri file .txt e salvali come .txt dove preferisci
+• Evidenzia con **grassetto**
+
+SEI LINGUE
+Interfaccia e comandi vocali in italiano, inglese, tedesco, spagnolo, francese e portoghese.
+
+PRIVATO PER PROGETTAZIONE
+PromptAir non ha il permesso di accesso a internet. Copioni, impostazioni e video restano solo sul tuo dispositivo – nessun account, nessun server, nessuna pubblicità, nessun tracciamento.
+
+Un progetto di Silver Applications.
+Feedback e domande: info@silverapplications.com

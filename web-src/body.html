@@ -1,0 +1,205 @@
+<body>
+
+<!-- ================= STARTSEQUENZ (nur App) ================= -->
+<div id="intro" aria-hidden="true">
+  <div class="intro-stage">
+    <div class="intro-tile">%%INTRO_SVG%%<i class="glint"></i></div>
+  </div>
+  <div class="intro-sa">%%SA_ICON%%<span><b>SILVER</b> APPLICATIONS</span></div>
+</div>
+
+%%SPRITE%%
+<!-- ================= HOME ================= -->
+<div id="viewHome" class="view on">
+  <header class="app">
+    %%LOGO%%
+    <h1>Prompt<b>Air</b></h1>
+  </header>
+  <div class="hint" data-i18n="homeHint"></div>
+  <div id="homeList"></div>
+  <div class="homebar">
+    <button class="iconbtn" id="btnSettingsHome" data-i18n-label="settings"><svg aria-hidden="true"><use href="#i-sliders"/></svg></button>
+    <div class="spacer"></div>
+    <button class="btn" id="btnImportHome"><svg aria-hidden="true"><use href="#i-import"/></svg><span data-i18n="loadScript"></span></button>
+    <button class="btn primary" id="btnNew"><svg aria-hidden="true"><use href="#i-plus"/></svg><span data-i18n="newScript"></span></button>
+  </div>
+  <input type="file" id="fileImport" accept=".txt,.md,.text,text/plain" hidden>
+</div>
+
+<!-- ================= EDITOR ================= -->
+<div id="viewEdit" class="view">
+  <div class="topbar">
+    <button class="iconbtn" id="btnBackHome" data-i18n-label="back"><svg aria-hidden="true"><use href="#i-back"/></svg></button>
+    <input id="edTitle" data-i18n-ph="titlePh">
+    <button class="iconbtn" id="btnDelete" data-i18n-label="del"><svg aria-hidden="true"><use href="#i-trash"/></svg></button>
+  </div>
+  <textarea id="edText" data-i18n-ph="textPh"></textarea>
+  <div class="edfoot">
+    <div class="stats" id="edStats"></div>
+    <button class="btn app-only" id="btnSpeak" data-i18n="speak"></button>
+    <button class="btn" id="btnExport" data-i18n="exportBtn"></button>
+    <button class="btn primary" id="btnPrompt"><svg aria-hidden="true"><use href="#i-play"/></svg><span data-i18n="promptBtn"></span></button>
+  </div>
+</div>
+
+<!-- ================= PROMPTER ================= -->
+<div id="viewPrompt" class="view">
+  <video id="camVideo" autoplay playsinline muted></video>
+  <div id="stage">
+    <div id="scroller"><div id="content"></div></div>
+  </div>
+  <div id="dimTop"></div><div id="dimBot"></div>
+  <div id="guide"><div class="tri"></div><div class="ln"></div></div>
+  <div id="progress"></div>
+  <div id="hud">
+    <div id="micDot"></div>
+    <span id="timeLeft">–:––</span>
+    <div id="recBadge"><i></i><span id="recTime">0:00</span></div>
+  </div>
+  <!-- Steuerung im Stil einer DVD-Fernbedienung -->
+  <div id="ctlbar">
+    <div class="ctlside">
+      <button class="pbtn small web-only" id="btnExit" data-i18n-label="back"><svg aria-hidden="true"><use href="#i-back"/></svg></button>
+      <button class="pbtn small" id="btnGear" data-i18n-label="settings"><svg aria-hidden="true"><use href="#i-sliders"/></svg></button>
+      <button class="pbtn small" id="btnRestart" data-i18n-label="restart"><svg aria-hidden="true"><use href="#i-restart"/></svg></button>
+    </div>
+    <div class="dpad">
+      <button class="seg up" id="btnSlower" data-i18n-label="slower"><svg aria-hidden="true"><use href="#i-dblup"/></svg></button>
+      <button class="seg left" id="btnMic" data-i18n-label="mic"><svg aria-hidden="true"><use href="#i-mic"/></svg></button>
+      <button class="seg right" id="btnRec" data-i18n-label="rec"><svg aria-hidden="true"><use href="#i-rec"/></svg></button>
+      <button class="seg down" id="btnFaster" data-i18n-label="faster"><svg aria-hidden="true"><use href="#i-dbldown"/></svg></button>
+      <button class="center" id="btnPlay" data-i18n-label="playPause"><svg aria-hidden="true"><use href="#i-play"/></svg></button>
+    </div>
+    <div class="ctlside">
+      <button class="pbtn small" id="btnCam" data-i18n-label="cam"><svg aria-hidden="true"><use href="#i-cam"/></svg></button>
+      <button class="pbtn small" id="btnFlip" data-i18n-label="flip" style="display:none"><svg aria-hidden="true"><use href="#i-flip"/></svg></button>
+      <button class="pbtn small" id="btnMirror" data-i18n-label="mirror"><svg aria-hidden="true"><use href="#i-mirror"/></svg></button>
+    </div>
+  </div>
+  <div id="countdown"><span>3</span></div>
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<!-- ================= MIKROFON-ASSISTENT (Browser) ================= -->
+<div id="permDlg" style="position:fixed;inset:0;z-index:30;display:none;place-items:center;background:rgba(0,0,0,.7);padding:20px">
+  <div style="background:var(--panel);border:1px solid var(--line);border-radius:0;max-width:440px;width:100%;padding:20px 20px 16px;max-height:85dvh;overflow:auto">
+    <h2 id="permTitle" style="margin:0 0 10px;font-size:18px"></h2>
+    <div id="permBody" style="font-size:14.5px;line-height:1.65;color:var(--dim)"></div>
+    <div style="display:flex;gap:10px;margin-top:14px">
+      <button class="btn" id="permClose" style="flex:1" data-i18n="permClose"></button>
+      <button class="btn primary" id="permRetry" style="flex:1" data-i18n="permRetry"></button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= EINSTELLUNGEN ================= -->
+<div id="drawer">
+  <div class="bg" id="drawerBg"></div>
+  <div class="panel">
+    <h2 data-i18n="settings"></h2>
+
+    <div class="set"><label data-i18n="uiLang"></label>
+      <select data-set="uiLang">
+        <option value="auto" data-i18n="langAuto"></option>
+        <option value="de">Deutsch</option><option value="en">English</option>
+        <option value="es">Español</option><option value="fr">Français</option>
+        <option value="pt">Português</option><option value="it">Italiano</option>
+      </select></div>
+
+    <div class="set"><label><span data-i18n="speed"></span> <output id="oSpeed"></output></label>
+      <input type="range" min="10" max="400" step="5" data-set="speed"></div>
+    <div class="set"><label><span data-i18n="fontSize"></span> <output id="oFontSize"></output></label>
+      <input type="range" min="18" max="140" step="1" data-set="fontSize"></div>
+    <div class="set"><label><span data-i18n="lineHeight"></span> <output id="oLineHeight"></output></label>
+      <input type="range" min="1.1" max="2.4" step="0.05" data-set="lineHeight"></div>
+    <div class="set"><label><span data-i18n="margin"></span> <output id="oMarginPct"></output></label>
+      <input type="range" min="0" max="30" step="1" data-set="marginPct"></div>
+    <div class="set"><label><span data-i18n="guidePos"></span> <output id="oGuidePos"></output></label>
+      <input type="range" min="10" max="60" step="1" data-set="guidePos"></div>
+
+    <div class="setrow">
+      <div class="set"><label data-i18n="textColor"></label><input type="color" data-set="textColor"></div>
+      <div class="set"><label data-i18n="bgColor"></label><input type="color" data-set="bgColor"></div>
+    </div>
+    <div class="setrow">
+      <div class="set"><label data-i18n="fontFamily"></label>
+        <select data-set="fontFamily">
+          <option value="system-ui,sans-serif" data-i18n="fontStd"></option>
+          <option value="'IBM Plex Sans',sans-serif">IBM Plex Sans</option>
+          <option value="'IBM Plex Mono',monospace">IBM Plex Mono</option>
+          <option value="Georgia,'Times New Roman',serif" data-i18n="fontSerif"></option>
+          <option value="'Arial Narrow','Roboto Condensed',sans-serif-condensed,sans-serif" data-i18n="fontNarrow"></option>
+          <option value="ui-monospace,Menlo,monospace" data-i18n="fontMono"></option>
+        </select></div>
+      <div class="set"><label data-i18n="align"></label>
+        <select data-set="align">
+          <option value="left" data-i18n="alignLeft"></option>
+          <option value="center" data-i18n="alignCenter"></option>
+        </select></div>
+    </div>
+
+    <div class="switch"><span data-i18n="mirrorH"></span><input type="checkbox" data-set="mirrorH"></div>
+    <div class="switch"><span data-i18n="mirrorV"></span><input type="checkbox" data-set="mirrorV"></div>
+    <div class="switch"><span data-i18n="guideShow"></span><input type="checkbox" data-set="guideShow"></div>
+    <div class="switch"><span data-i18n="focusDim"></span><input type="checkbox" data-set="focusDim"></div>
+    <div class="switch"><span data-i18n="loop"></span><input type="checkbox" data-set="loop"></div>
+    <div class="switch"><span data-i18n="keepAwake"></span><input type="checkbox" data-set="keepAwake"></div>
+
+    <div class="set"><label><span data-i18n="countdown"></span> <output id="oCountdown"></output></label>
+      <input type="range" min="0" max="10" step="1" data-set="countdown"></div>
+
+    <hr>
+    <div class="setrow">
+      <div class="set"><label data-i18n="srLang"></label>
+        <select data-set="lang">
+          <option value="auto" data-i18n="srAuto"></option>
+          <option value="de-DE">Deutsch (DE)</option><option value="de-AT">Deutsch (AT)</option><option value="de-CH">Deutsch (CH)</option>
+          <option value="en-US">English (US)</option><option value="en-GB">English (UK)</option>
+          <option value="es-ES">Español (ES)</option><option value="es-MX">Español (MX)</option><option value="es-US">Español (US)</option>
+          <option value="fr-FR">Français (FR)</option><option value="fr-CA">Français (CA)</option>
+          <option value="pt-BR">Português (BR)</option><option value="pt-PT">Português (PT)</option>
+          <option value="it-IT">Italiano</option><option value="nl-NL">Nederlands</option>
+          <option value="pl-PL">Polski</option><option value="tr-TR">Türkçe</option><option value="ru-RU">Русский</option>
+        </select></div>
+      <div class="set"><label data-i18n="voiceMode"></label>
+        <select data-set="voiceMode">
+          <option value="follow" data-i18n="vmFollow"></option>
+          <option value="commands" data-i18n="vmCommands"></option>
+        </select></div>
+    </div>
+    <p class="sub" id="voiceSub"></p>
+
+    <div class="set"><label><span data-i18n="camOpacity"></span> <output id="oCamOpacity"></output></label>
+      <input type="range" min="0" max="90" step="5" data-set="camOpacity"></div>
+
+    <hr>
+    <div class="help">
+      <h2 data-i18n="helpTitle"></h2>
+      <p data-i18n-html="helpPad"></p>
+      <p id="helpBack"></p>
+      <p data-i18n-html="helpTouch"></p>
+      <p data-i18n-html="helpKeys"></p>
+      <p data-i18n-html="helpScript"></p>
+      <p data-i18n-html="helpRec"></p>
+    </div>
+
+    <hr>
+    <div class="legal">
+      <h2 data-i18n="legalTitle"></h2>
+      <a href="https://silverapplications.com/apps/promptair/impressum/" target="_blank" rel="noopener" data-i18n="imprint"></a>
+      <a id="lnkPrivacy" href="https://silverapplications.com/apps/promptair/datenschutz/" target="_blank" rel="noopener" data-i18n="privacy"></a>
+      <a href="#" id="lnkLicenses" class="app-only" data-i18n="licenses"></a>
+      <p class="ver" id="appVersion"></p>
+    </div>
+    <button class="btn" id="btnCloseDrawer" style="width:100%; margin-top:10px" data-i18n="close"></button>
+  </div>
+</div>
+
+<script>
+'use strict';
+%%I18N%%
+%%APP%%
+</script>
+</body>
+</html>

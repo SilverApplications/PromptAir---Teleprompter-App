@@ -1,0 +1,16 @@
+<resources>
+    <!-- Nur native Bildschirme (Vorlesen, Lizenzen). Die Prompter-Oberfläche übersetzt sich selbst (assets/promptair.html). -->
+    <string name="speak_title">Lecture à voix haute</string>
+    <string name="speak_hint">Saisis le texte ici … [pause] et [pause lang] créent des pauses.</string>
+    <string name="voice_label">Voix</string>
+    <string name="btn_say">Lire</string>
+    <string name="btn_stop">Arrêter</string>
+    <string name="btn_export">En WAV</string>
+    <string name="no_voices">Aucune voix hors ligne trouvée pour cette langue.</string>
+    <string name="rate_label">Vitesse : %.2f×</string>
+    <string name="rate_default">Vitesse : 1,00×</string>
+    <string name="export_failed">Échec de l’export.</string>
+    <string name="share_audio">Partager l’audio</string>
+    <string name="ai_notice">Remarque : cette voix est générée de façon synthétique.</string>
+    <string name="licenses_title">Licences et code source</string>
+</resources>

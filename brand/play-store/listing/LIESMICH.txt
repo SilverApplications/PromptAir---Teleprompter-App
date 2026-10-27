@@ -1,0 +1,10 @@
+PromptAir – Store-Eintrag in sechs Sprachen (Stand 1.1.0)
+
+Je Sprachordner:
+  1-titel.txt            App-Name (max. 30 Zeichen)
+  2-kurzbeschreibung.txt Kurzbeschreibung (max. 80 Zeichen)
+  3-beschreibung.txt     Ausführliche Beschreibung (max. 4000 Zeichen)
+  1-prompter.png … 4-settings.png   Smartphone-Screenshots 1080 × 1920 (Reihenfolge 1–4)
+  feature-graphic.png    Feature-Grafik 1024 × 500
+
+Play Console: Wachstum → Store-Präsenz → Haupt-Store-Eintrag → Übersetzungen verwalten → eigene Übersetzungen hinzufügen.

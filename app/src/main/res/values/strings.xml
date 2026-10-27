@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name" translatable="false">PromptAir</string>
+    <!-- Nur native Bildschirme (Vorlesen, Lizenzen). Die Prompter-Oberfläche übersetzt sich selbst (assets/promptair.html). -->
+    <string name="speak_title">Read aloud</string>
+    <string name="speak_hint">Type text here … [pause] and [pause lang] create speaking pauses.</string>
+    <string name="voice_label">Voice</string>
+    <string name="btn_say">Read aloud</string>
+    <string name="btn_stop">Stop</string>
+    <string name="btn_export">As WAV</string>
+    <string name="no_voices">No offline voice found for this language.</string>
+    <string name="rate_label">Speed: %.2f×</string>
+    <string name="rate_default">Speed: 1.00×</string>
+    <string name="export_failed">Export failed.</string>
+    <string name="share_audio">Share audio</string>
+    <string name="ai_notice">Note: this speech is synthetically generated.</string>
+    <string name="licenses_title">Licenses &amp; source code</string>
+</resources>

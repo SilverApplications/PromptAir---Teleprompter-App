@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/speakRoot"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/anthrazit_900"
+    android:paddingStart="20dp" android:paddingEnd="20dp" android:paddingTop="16dp">
+
+    <TextView
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="@string/voice_label"
+        android:textAllCaps="true" android:letterSpacing="0.18" android:fontFamily="monospace"
+        android:textColor="@color/petrol_300" android:textSize="12sp"/>
+
+    <Spinner android:id="@+id/spVoice"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:minHeight="48dp"/>
+
+    <TextView android:id="@+id/txtRate"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="12dp" android:text="@string/rate_default"
+        android:textColor="@color/silver_300" android:textSize="13sp"/>
+
+    <SeekBar android:id="@+id/seekRate"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:max="100" android:progress="33"/>
+
+    <EditText android:id="@+id/edText"
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:layout_marginTop="12dp" android:gravity="top"
+        android:padding="12dp"
+        android:background="@drawable/field_bg"
+        android:textColor="@color/white" android:textColorHint="@color/silver_300"
+        android:hint="@string/speak_hint" android:inputType="textMultiLine"
+        android:importantForAutofill="no"/>
+
+    <TextView
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/ai_notice"
+        android:textColor="@color/silver_300" android:textSize="12sp"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:layout_marginTop="10dp">
+        <Button android:id="@+id/btnSay" style="@style/Widget.PromptAir.Button"
+            android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+            android:text="@string/btn_say"/>
+        <Button android:id="@+id/btnStop" style="@style/Widget.PromptAir.Button.Outlined"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginStart="8dp" android:text="@string/btn_stop"/>
+        <Button android:id="@+id/btnExport" style="@style/Widget.PromptAir.Button.Outlined"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginStart="8dp" android:text="@string/btn_export"/>
+    </LinearLayout>
+</LinearLayout>

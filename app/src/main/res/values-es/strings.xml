@@ -1,0 +1,16 @@
+<resources>
+    <!-- Nur native Bildschirme (Vorlesen, Lizenzen). Die Prompter-Oberfläche übersetzt sich selbst (assets/promptair.html). -->
+    <string name="speak_title">Leer en voz alta</string>
+    <string name="speak_hint">Escribe el texto aquí … [pause] y [pause lang] crean pausas.</string>
+    <string name="voice_label">Voz</string>
+    <string name="btn_say">Leer</string>
+    <string name="btn_stop">Parar</string>
+    <string name="btn_export">Como WAV</string>
+    <string name="no_voices">No se encontró ninguna voz sin conexión para este idioma.</string>
+    <string name="rate_label">Velocidad: %.2f×</string>
+    <string name="rate_default">Velocidad: 1,00×</string>
+    <string name="export_failed">Error al exportar.</string>
+    <string name="share_audio">Compartir audio</string>
+    <string name="ai_notice">Aviso: esta voz se genera de forma sintética.</string>
+    <string name="licenses_title">Licencias y código fuente</string>
+</resources>

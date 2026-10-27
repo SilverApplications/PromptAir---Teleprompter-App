@@ -1,0 +1,46 @@
+PromptAir est un téléprompteur qui t’écoute : pendant que tu parles, le texte suit ta voix – mot par mot, à ton rythme. Si tu hésites, il attend. Si tu accélères, il suit.
+
+Sans compte. Sans abonnement. Sans filigrane. Sans limite de caractères.
+
+COMMANDE VOCALE
+• Le texte suit la voix : la ligne de lecture saute au mot que tu prononces
+• Commandes vocales : « démarre », « stop », « plus vite », « moins vite », « recommence »
+• Reconnaissance de préférence sur l’appareil (Android 12 et plus) – ton audio reste chez toi
+• Les indications entre <chevrons> sont ignorées pendant le suivi
+
+COMMANDES FAÇON TÉLÉCOMMANDE
+• Croix directionnelle : lecture/pause au centre, plus vite et moins vite, micro et enregistrement à portée de main
+• Taille du texte à deux doigts, toucher pour mettre en pause
+• Compatible avec les télécommandes Bluetooth et les claviers
+• Geste de balayage pour revenir
+
+CAMÉRA ET ENREGISTREMENT
+• Caméra avant ou arrière derrière le texte semi-transparent
+• Enregistre la vidéo sans le texte, directement dans « Movies/PromptAir »
+• Sans filigrane, sans limite de durée
+
+ENTIÈREMENT RÉGLABLE
+• Vitesse, taille du texte, interligne, marges, police, alignement
+• Couleur du texte et du fond, ligne de lecture et assombrissement
+• Miroir horizontal et vertical pour rigs de prompteur
+• Compte à rebours, boucle, écran toujours allumé
+• Temps restant et barre de progression
+
+LECTURE À VOIX HAUTE
+• La synthèse vocale hors ligne de ton appareil lit ton script – pour répéter et vérifier le timing
+• Choix de la voix et de la vitesse, pauses avec [pause] et [pause lang]
+• Partage en fichier WAV
+
+SCRIPTS
+• Autant de scripts que tu veux, sans limite de longueur
+• Charge des fichiers .txt et enregistre-les en .txt où tu veux
+• Mise en valeur avec **gras**
+
+SIX LANGUES
+Interface et commandes vocales en français, anglais, allemand, espagnol, portugais et italien.
+
+PRIVÉ PAR CONCEPTION
+PromptAir n’a pas d’autorisation Internet. Scripts, réglages et vidéos restent uniquement sur ton appareil – sans compte, sans serveur, sans publicité, sans pistage.
+
+Un projet de Silver Applications.
+Avis et questions : info@silverapplications.com

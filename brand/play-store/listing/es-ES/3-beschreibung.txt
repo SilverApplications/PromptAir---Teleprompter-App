@@ -1,0 +1,46 @@
+PromptAir es un teleprompter que te escucha: mientras hablas, el texto sigue tu voz, palabra por palabra y a tu propio ritmo. Si te detienes, espera. Si aceleras, te acompaña.
+
+Sin cuenta. Sin suscripción. Sin marca de agua. Sin límite de caracteres.
+
+CONTROL POR VOZ
+• El texto sigue la voz: la línea de lectura salta a la palabra que estás diciendo
+• Comandos de voz: «empieza», «para», «más rápido», «más lento», «desde el principio»
+• Prioriza el reconocimiento en el dispositivo (Android 12 o superior): tu audio se queda contigo
+• Las acotaciones entre <corchetes angulares> se omiten al seguir la voz
+
+CONTROL COMO UN MANDO A DISTANCIA
+• Cruceta: reproducir/pausa en el centro, más rápido y más lento, micrófono y grabación al alcance
+• Cambia el tamaño de letra con dos dedos, toca para pausar
+• Compatible con presentadores Bluetooth y teclados
+• Gesto de deslizar para volver
+
+CÁMARA Y GRABACIÓN
+• Cámara frontal o trasera detrás del texto semitransparente
+• Graba vídeo sin el texto superpuesto, directamente en «Movies/PromptAir»
+• Sin marca de agua, sin límite de duración
+
+TOTALMENTE AJUSTABLE
+• Velocidad, tamaño de letra, interlineado, márgenes, fuente, alineación
+• Color de texto y de fondo, línea de lectura y oscurecimiento de enfoque
+• Reflejo horizontal y vertical para rigs de prompter
+• Cuenta atrás, bucle, pantalla siempre encendida
+• Tiempo restante y barra de progreso
+
+LECTURA EN VOZ ALTA
+• La voz sin conexión de tu dispositivo lee tu guion: para ensayar y comprobar el tiempo
+• Elige voz y velocidad, añade pausas con [pause] y [pause lang]
+• Compártelo como archivo WAV
+
+GUIONES
+• Todos los guiones que quieras, sin límite de longitud
+• Carga archivos .txt y guárdalos como .txt donde tú elijas
+• Resalta con **negrita**
+
+SEIS IDIOMAS
+Interfaz y comandos de voz en español, inglés, alemán, francés, portugués e italiano.
+
+PRIVADO DESDE EL DISEÑO
+PromptAir no tiene permiso de internet. Guiones, ajustes y vídeos se quedan solo en tu dispositivo: sin cuenta, sin servidor, sin anuncios, sin seguimiento.
+
+Un proyecto de Silver Applications.
+Comentarios y preguntas: info@silverapplications.com

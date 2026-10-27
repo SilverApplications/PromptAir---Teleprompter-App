@@ -1,0 +1,21 @@
+# Gradle / Android Studio
+.gradle/
+.kotlin/
+build/
+app/build/
+app/release/
+captures/
+.idea/
+*.iml
+local.properties
+.DS_Store
+
+# Signatur und Builds – niemals einchecken
+*.jks
+*.keystore
+keystore.properties
+*.aab
+*.apk
+
+# Archive (Übertragungen, Sicherungen)
+*.zip

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- PromptAir-Bildmarke (Silver-Applications-Stil). Generiert – Quelle: brand/logo.py -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <group android:translateX="20.850" android:translateY="15.000"
+        android:scaleX="0.78" android:scaleY="0.78">
+        <path android:fillColor="#FFD9DDE1" android:pathData="M30,16.5h12v7h-12z"/>
+        <path android:fillColor="#FFD9DDE1" android:pathData="M30,26.5h24v7h-24z"/>
+        <path android:fillColor="#FFD9DDE1" android:pathData="M30,36.5h36v7h-36z"/>
+        <path android:fillColor="#FF3FA893" android:pathData="M30,46.5h48v7h-48z"/>
+        <path android:fillColor="#FFD9DDE1" android:pathData="M30,56.5h36v7h-36z"/>
+        <path android:fillColor="#FFD9DDE1" android:pathData="M30,66.5h24v7h-24z"/>
+        <path android:fillColor="#FFD9DDE1" android:pathData="M30,76.5h12v7h-12z"/>
+        <path android:fillColor="#FF9BA3AB" android:fillAlpha="0.55" android:pathData="M14,28.5h9v3h-9z"/>
+        <path android:fillColor="#FF9BA3AB" android:fillAlpha="0.55" android:pathData="M10,38.5h13v3h-13z"/>
+        <path android:fillColor="#FF9BA3AB" android:fillAlpha="0.55" android:pathData="M7,48.5h16v3h-16z"/>
+        <path android:fillColor="#FF9BA3AB" android:fillAlpha="0.55" android:pathData="M10,58.5h13v3h-13z"/>
+        <path android:fillColor="#FF9BA3AB" android:fillAlpha="0.55" android:pathData="M14,68.5h9v3h-9z"/>
+    </group>
+</vector>
