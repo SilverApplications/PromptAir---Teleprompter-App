@@ -6,10 +6,19 @@ LISTING = {}
 
 LISTING['de-DE'] = dict(
 title='PromptAir – Teleprompter',
-short='Teleprompter, der deiner Stimme folgt – ohne Konto, Limit oder Wasserzeichen.',
+short='Teleprompter, der deiner Stimme folgt – für Reden, Videos und Präsentationen.',
 full='''PromptAir ist ein Teleprompter, der dir zuhört: Während du sprichst, folgt der Text deiner Stimme – Wort für Wort, in deinem eigenen Tempo. Stockst du, wartet er. Beschleunigst du, zieht er mit.
 
 Ohne Konto. Ohne Abo. Ohne Wasserzeichen. Ohne Zeichenbegrenzung.
+
+IDEAL FÜR
+• Präsentationen und Vorträge: deine Sprechernotizen, z. B. zur PowerPoint-Präsentation, auf dem Handy oder Tablet
+• Rede halten: Hochzeitsrede, Trauzeugenrede, Geburtstagsrede oder Trauerrede bei einer Trauerfeier
+• YouTube-Videos, Reels und Shorts direkt mit der Frontkamera aufnehmen
+• TikTok und BookTok: Buchrezensionen und Leseproben flüssig einsprechen
+• Podcasts, Voice-over und Hörbuch-Aufnahmen
+• Online-Meetings, Webinare und Livestreams
+• Referate, Bewerbungsvideos, Predigten und Moderationen
 
 SPRACHSTEUERUNG
 • Text folgt der Stimme: Die Leselinie springt automatisch zu deinem gesprochenen Wort
@@ -57,10 +66,19 @@ Feedback und Fragen: info@silverapplications.com''')
 
 LISTING['en-US'] = dict(
 title='PromptAir – Teleprompter',
-short='Teleprompter that follows your voice. No account, no limits, no watermark.',
+short='Teleprompter that follows your voice – for speeches, videos and presentations.',
 full='''PromptAir is a teleprompter that listens: while you speak, the text follows your voice – word by word, at your own pace. If you pause, it waits. If you speed up, it keeps up.
 
 No account. No subscription. No watermark. No character limit.
+
+PERFECT FOR
+• Presentations and talks: your speaker notes, e.g. for a PowerPoint presentation, on your phone or tablet
+• Giving a speech: wedding speech, best man or maid of honor speech, birthday toast or eulogy at a funeral
+• YouTube videos, Reels and Shorts recorded straight with the front camera
+• TikTok and BookTok: record book reviews and readings smoothly
+• Podcasts, voice-overs and audiobook recordings
+• Online meetings, webinars and livestreams
+• School presentations, video job applications, sermons and hosting
 
 VOICE CONTROL
 • Text follows voice: the reading line jumps to the word you are speaking
@@ -108,10 +126,19 @@ Feedback and questions: info@silverapplications.com''')
 
 LISTING['es-ES'] = dict(
 title='PromptAir – Teleprompter',
-short='Teleprompter que sigue tu voz. Sin cuenta, sin límites, sin marca de agua.',
+short='Teleprompter que sigue tu voz: para discursos, vídeos y presentaciones.',
 full='''PromptAir es un teleprompter que te escucha: mientras hablas, el texto sigue tu voz, palabra por palabra y a tu propio ritmo. Si te detienes, espera. Si aceleras, te acompaña.
 
 Sin cuenta. Sin suscripción. Sin marca de agua. Sin límite de caracteres.
+
+IDEAL PARA
+• Presentaciones y charlas: tus notas de orador, p. ej. para una presentación de PowerPoint, en el móvil o la tableta
+• Dar un discurso: discurso de boda, del padrino, de cumpleaños o un discurso fúnebre en un funeral
+• Vídeos de YouTube, Reels y Shorts grabados directamente con la cámara frontal
+• TikTok y BookTok: graba reseñas de libros y lecturas con fluidez
+• Pódcasts, locuciones y grabación de audiolibros
+• Reuniones online, webinars y directos
+• Exposiciones de clase, vídeos de candidatura, homilías y presentaciones
 
 CONTROL POR VOZ
 • El texto sigue la voz: la línea de lectura salta a la palabra que estás diciendo
@@ -159,10 +186,19 @@ Comentarios y preguntas: info@silverapplications.com''')
 
 LISTING['fr-FR'] = dict(
 title='PromptAir – Téléprompteur',
-short='Téléprompteur qui suit ta voix. Sans compte, sans limite, sans filigrane.',
+short='Téléprompteur qui suit ta voix – pour discours, vidéos et présentations.',
 full='''PromptAir est un téléprompteur qui t’écoute : pendant que tu parles, le texte suit ta voix – mot par mot, à ton rythme. Si tu hésites, il attend. Si tu accélères, il suit.
 
 Sans compte. Sans abonnement. Sans filigrane. Sans limite de caractères.
+
+IDÉAL POUR
+• Présentations et conférences : tes notes d’orateur, par ex. pour une présentation PowerPoint, sur téléphone ou tablette
+• Prononcer un discours : discours de mariage, de témoin, d’anniversaire ou éloge funèbre lors d’obsèques
+• Vidéos YouTube, Reels et Shorts enregistrés directement avec la caméra frontale
+• TikTok et BookTok : enregistre critiques de livres et lectures sans accroc
+• Podcasts, voix off et enregistrement de livres audio
+• Réunions en ligne, webinaires et lives
+• Exposés, vidéos de candidature, homélies et animation
 
 COMMANDE VOCALE
 • Le texte suit la voix : la ligne de lecture saute au mot que tu prononces
@@ -210,10 +246,19 @@ Avis et questions : info@silverapplications.com''')
 
 LISTING['pt-BR'] = dict(
 title='PromptAir – Teleprompter',
-short='Teleprompter que segue sua voz. Sem conta, sem limites, sem marca d’água.',
+short='Teleprompter que segue sua voz – para discursos, vídeos e apresentações.',
 full='''PromptAir é um teleprompter que escuta você: enquanto você fala, o texto segue sua voz – palavra por palavra, no seu próprio ritmo. Se você hesita, ele espera. Se acelera, ele acompanha.
 
 Sem conta. Sem assinatura. Sem marca d’água. Sem limite de caracteres.
+
+IDEAL PARA
+• Apresentações e palestras: suas notas de orador, p. ex. para uma apresentação de PowerPoint, no celular ou tablet
+• Fazer um discurso: discurso de casamento, de padrinho, de aniversário ou homenagem em um velório
+• Vídeos do YouTube, Reels e Shorts gravados direto com a câmera frontal
+• TikTok e BookTok: grave resenhas de livros e leituras com fluidez
+• Podcasts, locuções e gravação de audiolivros
+• Reuniões online, webinars e lives
+• Seminários, vídeos de candidatura, pregações e apresentações de eventos
 
 CONTROLE POR VOZ
 • Texto segue a voz: a linha de leitura pula para a palavra que você está falando
@@ -261,10 +306,19 @@ Feedback e dúvidas: info@silverapplications.com''')
 
 LISTING['it-IT'] = dict(
 title='PromptAir – Teleprompter',
-short='Teleprompter che segue la tua voce. Niente account, limiti o filigrane.',
+short='Teleprompter che segue la tua voce: per discorsi, video e presentazioni.',
 full='''PromptAir è un teleprompter che ti ascolta: mentre parli, il testo segue la tua voce – parola per parola, al tuo ritmo. Se esiti, aspetta. Se acceleri, ti segue.
 
 Nessun account. Nessun abbonamento. Nessuna filigrana. Nessun limite di caratteri.
+
+IDEALE PER
+• Presentazioni e conferenze: i tuoi appunti da relatore, ad es. per una presentazione PowerPoint, su telefono o tablet
+• Tenere un discorso: discorso di nozze, del testimone, di compleanno o elogio funebre a un funerale
+• Video YouTube, Reels e Shorts registrati direttamente con la fotocamera frontale
+• TikTok e BookTok: registra recensioni di libri e letture in modo fluido
+• Podcast, voice-over e registrazione di audiolibri
+• Riunioni online, webinar e dirette
+• Interrogazioni ed esposizioni, video di candidatura, omelie e conduzione
 
 COMANDO VOCALE
 • Il testo segue la voce: la linea di lettura salta alla parola che stai pronunciando
