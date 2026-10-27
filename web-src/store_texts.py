@@ -51,6 +51,7 @@ Oberfläche und Sprachbefehle auf Deutsch, Englisch, Spanisch, Französisch, Por
 PRIVAT BY DESIGN
 PromptAir hat keine Internet-Berechtigung. Skripte, Einstellungen und Videos bleiben ausschließlich auf deinem Gerät – kein Konto, kein Server, keine Werbung, kein Tracking.
 
+Open Source unter GPL-3.0, Quellcode auf GitHub: github.com/SilverApplications/PromptAir---Teleprompter-App
 Ein Projekt von Silver Applications.
 Feedback und Fragen: info@silverapplications.com''')
 
@@ -101,6 +102,7 @@ Interface and voice commands in English, German, Spanish, French, Portuguese and
 PRIVATE BY DESIGN
 PromptAir has no internet permission. Scripts, settings and videos stay on your device only – no account, no server, no ads, no tracking.
 
+Open source under GPL-3.0, code on GitHub: github.com/SilverApplications/PromptAir---Teleprompter-App
 A Silver Applications project.
 Feedback and questions: info@silverapplications.com''')
 
@@ -151,6 +153,7 @@ Interfaz y comandos de voz en español, inglés, alemán, francés, portugués e
 PRIVADO DESDE EL DISEÑO
 PromptAir no tiene permiso de internet. Guiones, ajustes y vídeos se quedan solo en tu dispositivo: sin cuenta, sin servidor, sin anuncios, sin seguimiento.
 
+Código abierto bajo GPL-3.0, código en GitHub: github.com/SilverApplications/PromptAir---Teleprompter-App
 Un proyecto de Silver Applications.
 Comentarios y preguntas: info@silverapplications.com''')
 
@@ -201,6 +204,7 @@ Interface et commandes vocales en français, anglais, allemand, espagnol, portug
 PRIVÉ PAR CONCEPTION
 PromptAir n’a pas d’autorisation Internet. Scripts, réglages et vidéos restent uniquement sur ton appareil – sans compte, sans serveur, sans publicité, sans pistage.
 
+Open source sous licence GPL-3.0, code sur GitHub : github.com/SilverApplications/PromptAir---Teleprompter-App
 Un projet de Silver Applications.
 Avis et questions : info@silverapplications.com''')
 
@@ -251,6 +255,7 @@ Interface e comandos de voz em português, inglês, alemão, espanhol, francês 
 PRIVADO POR DESIGN
 O PromptAir não tem permissão de internet. Roteiros, configurações e vídeos ficam só no seu aparelho – sem conta, sem servidor, sem anúncios, sem rastreamento.
 
+Código aberto sob GPL-3.0, código no GitHub: github.com/SilverApplications/PromptAir---Teleprompter-App
 Um projeto da Silver Applications.
 Feedback e dúvidas: info@silverapplications.com''')
 
@@ -301,6 +306,7 @@ Interfaccia e comandi vocali in italiano, inglese, tedesco, spagnolo, francese e
 PRIVATO PER PROGETTAZIONE
 PromptAir non ha il permesso di accesso a internet. Copioni, impostazioni e video restano solo sul tuo dispositivo – nessun account, nessun server, nessuna pubblicità, nessun tracciamento.
 
+Open source con licenza GPL-3.0, codice su GitHub: github.com/SilverApplications/PromptAir---Teleprompter-App
 Un progetto di Silver Applications.
 Feedback e domande: info@silverapplications.com''')
 

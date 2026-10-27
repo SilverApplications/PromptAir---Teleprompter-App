@@ -42,5 +42,6 @@ Interface et commandes vocales en français, anglais, allemand, espagnol, portug
 PRIVÉ PAR CONCEPTION
 PromptAir n’a pas d’autorisation Internet. Scripts, réglages et vidéos restent uniquement sur ton appareil – sans compte, sans serveur, sans publicité, sans pistage.
 
+Open source sous licence GPL-3.0, code sur GitHub : github.com/SilverApplications/PromptAir---Teleprompter-App
 Un projet de Silver Applications.
 Avis et questions : info@silverapplications.com

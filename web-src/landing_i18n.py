@@ -215,12 +215,12 @@ T = {
  'it': 'Prompter e voce di lettura funzionano senza internet – sul palco, in studio, in aereo.'},
 'v4_h': {'de': 'Freie Software', 'en': 'Free software', 'es': 'Software libre', 'fr': 'Logiciel libre', 'pt': 'Software livre', 'it': 'Software libero'},
 'v4_p': {
- 'de': 'Die Android-App erscheint unter der GPL als offener Quellcode – jede und jeder kann nachprüfen, was sie tut.',
- 'en': 'The Android app is released as open source under the GPL – anyone can check what it does.',
- 'es': 'La app de Android se publica como código abierto bajo la GPL: cualquiera puede comprobar lo que hace.',
- 'fr': 'L’app Android est publiée en code source ouvert sous GPL – chacun peut vérifier ce qu’elle fait.',
- 'pt': 'O app Android é publicado como código aberto sob a GPL – qualquer pessoa pode verificar o que ele faz.',
- 'it': 'L’app Android è pubblicata come codice aperto sotto GPL – chiunque può verificare cosa fa.'},
+ 'de': 'Die Android-App ist unter der GPL als <a href="https://github.com/SilverApplications/PromptAir---Teleprompter-App" rel="noopener">offener Quellcode auf GitHub</a> veröffentlicht – jede und jeder kann nachprüfen, was sie tut.',
+ 'en': 'The Android app is released as <a href="https://github.com/SilverApplications/PromptAir---Teleprompter-App" rel="noopener">open source on GitHub</a> under the GPL – anyone can check what it does.',
+ 'es': 'La app de Android se publica como <a href="https://github.com/SilverApplications/PromptAir---Teleprompter-App" rel="noopener">código abierto en GitHub</a> bajo la GPL: cualquiera puede comprobar lo que hace.',
+ 'fr': 'L’app Android est publiée en <a href="https://github.com/SilverApplications/PromptAir---Teleprompter-App" rel="noopener">code source ouvert sur GitHub</a> sous GPL – chacun peut vérifier ce qu’elle fait.',
+ 'pt': 'O app Android é publicado como <a href="https://github.com/SilverApplications/PromptAir---Teleprompter-App" rel="noopener">código aberto no GitHub</a> sob a GPL – qualquer pessoa pode verificar o que ele faz.',
+ 'it': 'L’app Android è pubblicata come <a href="https://github.com/SilverApplications/PromptAir---Teleprompter-App" rel="noopener">codice aperto su GitHub</a> sotto GPL – chiunque può verificare cosa fa.'},
 'f_title': {'de': 'Bereit für den ersten Take?', 'en': 'Ready for your first take?', 'es': '¿Listo para la primera toma?',
  'fr': 'Prêt pour la première prise ?', 'pt': 'Pronto para a primeira tomada?', 'it': 'Pronto per il primo ciak?'},
 'f_lead': {
