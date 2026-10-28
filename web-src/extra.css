@@ -86,3 +86,5 @@ html.intro body{overflow:hidden}
   #intro.run .sheen,#intro.run .glint,#intro.run .spark{animation:none}
   #intro.run .intro-sa{animation:none; opacity:1}
 }
+#micDot.live.hold{background:#E0A84B}
+

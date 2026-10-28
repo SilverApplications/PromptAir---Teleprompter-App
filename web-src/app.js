@@ -7,8 +7,11 @@ if(!window.SpeechRecognition && !window.webkitSpeechRecognition && window.Androi
     this.lang='de-DE'; this.continuous=true; this.interimResults=true;
     this.onresult=null; this.onend=null; this.onerror=null;
     this.start=function(){
+      let utt=0;
       window.__speechCb=function(text,isFinal){
-        if(self.onresult) self.onresult({resultIndex:0,results:[[{transcript:text}]]});
+        const r=[{transcript:text}]; r.isFinal=!!isFinal;
+        if(self.onresult) self.onresult({resultIndex:0,results:[r],__utt:utt});
+        if(isFinal) utt++;
       };
       AndroidSpeech.start(self.lang);
     };
@@ -212,7 +215,7 @@ if(App){
 /* ============ Prompter ============ */
 const stage=$('#stage'), scroller=$('#scroller'), content=$('#content');
 let tokens=[], pos=0, playing=false, lastT=0, rafId=0, maxPos=0;
-let voiceOn=false, voiceTarget=null, matchedIdx=-1;
+let voiceOn=false, voiceTarget=null, matchedIdx=-1, shownIdx=-1, offScript=0, vfHold=false;
 let wakeLock=null;
 
 function applyStyle(){
@@ -243,7 +246,7 @@ function hexA(hex,a){ const n=parseInt(hex.slice(1),16);
 function guidePx(){ return stage.clientHeight*S.guidePos/100; }
 function measure(){ maxPos=Math.max(0,content.scrollHeight-stage.clientHeight); }
 
-const norm=s=>s.toLowerCase().replace(/[^\p{L}\p{N}']/gu,'');
+const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^\p{L}\p{N}]/gu,'');
 function buildContent(text){
   content.innerHTML=''; tokens=[];
   let bold=false, skip=false;
@@ -274,14 +277,18 @@ function setPos(v){ pos=Math.min(maxPos,Math.max(0,v));
   scroller.style.transform=`translate3d(0,${-pos}px,0)`;
   $('#progress').style.width=maxPos? (pos/maxPos*100)+'%':'0%';
   const rest=Math.max(0,(maxPos-pos)/S.speed);
-  if(voiceOn&&S.voiceMode==='follow') $('#timeLeft').innerHTML='<svg aria-hidden="true"><use href="#i-mic"/></svg>';
+  if(voiceOn&&S.voiceMode==='follow'){}       /* Anzeige übernimmt updVoiceHud() */
   else $('#timeLeft').textContent=Math.floor(rest/60)+':'+String(Math.round(rest%60)).padStart(2,'0');
 }
 function tick(ts){
   rafId=requestAnimationFrame(tick);
   const dt=Math.min(.05,(ts-lastT)/1000||0); lastT=ts;
-  if(voiceOn&&S.voiceMode==='follow'&&voiceTarget!=null){
-    setPos(pos+(voiceTarget-pos)*Math.min(1,dt*5));
+  if(voiceOn&&S.voiceMode==='follow'){
+    if(voiceTarget!=null&&Math.abs(voiceTarget-pos)>.5){
+      const lineH=S.fontSize*S.lineHeight, maxStep=lineH*4*dt;
+      const step=(voiceTarget-pos)*Math.min(1,dt*4);
+      setPos(pos+Math.max(-maxStep,Math.min(maxStep,step)));
+    }
   } else if(playing){
     setPos(pos+S.speed*dt);
     if(pos>=maxPos){ if(S.loop){ setPos(0);} else { pause(); toast(t('endOfScript')); showCtl(); } }
@@ -289,10 +296,11 @@ function tick(ts){
 }
 
 function play(){
+  if(voiceOn&&S.voiceMode==='follow'){ playing=true; setPlayBtn(); anchorAtGuide(); setHold(false); hideCtlSoon(); return; }
   if(pos<2 && S.countdown>0 && !(voiceOn&&S.voiceMode==='follow')){ runCountdown(()=>{ playing=true; setPlayBtn(); hideCtlSoon(); }); }
   else { playing=true; setPlayBtn(); hideCtlSoon(); }
 }
-function pause(){ playing=false; setPlayBtn(); showCtl(); }
+function pause(){ playing=false; setPlayBtn(); showCtl(); if(voiceOn&&S.voiceMode==='follow'){ voiceTarget=null; updVoiceHud(); } }
 function setPlayBtn(){ $('#btnPlay').innerHTML='<svg aria-hidden="true"><use href="#i-'+(playing?'pause':'play')+'"/></svg>'; }
 function runCountdown(done){
   const c=$('#countdown'), sp=c.querySelector('span'); let n=S.countdown;
@@ -329,14 +337,16 @@ stage.addEventListener('touchmove',e=>{
     setPos(tState.p+dy*dir); voiceTarget=null;
   }
 },{passive:true});
-stage.addEventListener('touchend',()=>{
+stage.addEventListener('touchend',e=>{
   if(tState&&!tState.pinch&&!tState.moved&&Date.now()-tState.t<400){
-    playing?pause():play(); showCtl();
-  }
+    const tp=e.changedTouches&&e.changedTouches[0];
+    if(!(tp&&tapWord(document.elementFromPoint(tp.clientX,tp.clientY)))){ playing?pause():play(); }
+    showCtl();
+  } else if(tState&&tState.moved&&voiceOn&&S.voiceMode==='follow'){ anchorAtGuide(); }
   if(tState&&tState.pinch) saveSettings();
   tState=null;
 },{passive:true});
-stage.addEventListener('click',e=>{ if(!('ontouchstart'in window)){ playing?pause():play(); showCtl(); }});
+stage.addEventListener('click',e=>{ if(!('ontouchstart'in window)){ if(!tapWord(e.target)){ playing?pause():play(); } showCtl(); }});
 
 /* Tastatur / Bluetooth-Fernbedienung – Pfeile wie das Steuerkreuz: hoch = langsamer, runter = schneller */
 document.addEventListener('keydown',e=>{
@@ -346,8 +356,8 @@ document.addEventListener('keydown',e=>{
   if(k==='Space'||k==='Enter'||k==='PageDown'){ e.preventDefault(); playing?pause():play(); }
   else if(k==='ArrowUp'){ e.preventDefault(); changeSpeed(-10); }
   else if(k==='ArrowDown'){ e.preventDefault(); changeSpeed(10); }
-  else if(k==='ArrowLeft'||k==='PageUp'){ setPos(pos-stage.clientHeight*.4); voiceTarget=null; }
-  else if(k==='ArrowRight'){ setPos(pos+stage.clientHeight*.4); voiceTarget=null; }
+  else if(k==='ArrowLeft'||k==='PageUp'){ setPos(pos-stage.clientHeight*.4); voiceTarget=null; anchorAtGuide(); }
+  else if(k==='ArrowRight'){ setPos(pos+stage.clientHeight*.4); voiceTarget=null; anchorAtGuide(); }
   else if(k==='Home'){ restart(); }
   else if(k==='KeyM'){ S.mirrorH=!S.mirrorH; applyStyle(); syncDrawer(); }
   else if(k==='KeyF'){ toggleFS(); }
@@ -355,8 +365,9 @@ document.addEventListener('keydown',e=>{
   showCtl();
 });
 
-function restart(){ pause(); setPos(0); matchedIdx=-1; voiceTarget=null;
-  tokens.forEach(x=>x.el.classList.remove('read','now')); }
+function restart(){ const vf=voiceOn&&S.voiceMode==='follow';
+  pause(); setPos(0); matchedIdx=-1; shownIdx=-1; voiceTarget=null; offScript=0; vfHold=false;
+  tokens.forEach(x=>x.el.classList.remove('read','now')); if(vf){ playing=true; setPlayBtn(); } updVoiceHud(); }
 
 /* ============ Spracherkennung ============ */
 let rec=null, recActive=false;
@@ -404,20 +415,43 @@ function startRec(){
   recActive=true; voiceOn=true;
   $('#micDot').classList.add('live'); $('#btnMic').classList.add('on');
   toast(S.voiceMode==='follow'?t('voiceFollowOn'):t('voiceCmdOn',{cmds:cmdHelp().replace(/<\/?b>/g,'')}),2600);
-  if(S.voiceMode==='follow'){ playing=false; setPlayBtn(); }
+  vfReset(); if(S.voiceMode==='follow'){ playing=true; setPlayBtn(); anchorAtGuide(); updVoiceHud(); }
 }
 function stopRec(){
-  recActive=false; voiceOn=false; voiceTarget=null;
+  recActive=false; voiceOn=false; voiceTarget=null; vfHold=false;
   try{ rec&&rec.stop(); }catch(e){}
-  $('#micDot').classList.remove('live'); $('#btnMic').classList.remove('on');
+  $('#micDot').classList.remove('live','hold'); $('#btnMic').classList.remove('on');
+  if(S.voiceMode==='follow'){ playing=false; setPlayBtn(); setPos(pos); }
 }
+/* ============ Sprachfolge 2.0 ============
+   Jedes erkannte Wort wird genau einmal ausgewertet (Zwischenergebnisse wiederholen
+   sonst dieselben Wörter und schieben den Text immer weiter). Gesucht wird nur in einem
+   kleinen Fenster hinter der aktuellen Stelle; weiter entfernte Treffer brauchen zwei
+   Wörter in Folge. Passt nichts (freie Rede, Anekdote), bleibt der Text einfach stehen. */
+const VF={WIN:10, NEAR:2, HOLD_AFTER:6};
+let vfSession=0, vfKey=null, vfDone=0, vfPrev=null, cmdBuf=[];
+function vfReset(){ vfSession++; vfKey=null; vfDone=0; vfPrev=null; cmdBuf=[]; offScript=0; vfHold=false; }
 function onSpeech(ev){
-  let latest='';
-  for(let i=ev.resultIndex;i<ev.results.length;i++) latest+=ev.results[i][0].transcript+' ';
-  const words=latest.trim().split(/\s+/).map(norm).filter(Boolean);
-  if(!words.length) return;
-  if(S.voiceMode==='commands'){ handleCommands(words); return; }
-  followVoice(words.slice(-8));
+  for(let i=ev.resultIndex;i<ev.results.length;i++){
+    const r=ev.results[i], key=(ev.__utt!=null)?'a'+ev.__utt:'w'+vfSession+':'+i;
+    vfFeed(key, r[0].transcript||'', !!r.isFinal);
+  }
+}
+function vfFeed(key,text,isFinal){
+  const words=text.trim().split(/\s+/).map(norm).filter(Boolean);
+  if(key!==vfKey||words.length<vfDone-1){ vfKey=key; vfDone=0; }
+  /* Das letzte Wort eines Zwischenergebnisses ist oft noch unsicher – erst übernehmen,
+     wenn danach weitergesprochen wird oder das Ergebnis endgültig ist (Sprachfolge). */
+  const upto=(isFinal||S.voiceMode==='commands')?words.length:Math.max(vfDone,words.length-1);
+  const fresh=words.slice(vfDone,upto); vfDone=Math.max(vfDone,upto);
+  if(isFinal){ vfKey=null; vfDone=0; }
+  if(!fresh.length) return;
+  if(S.voiceMode==='commands'){ cmdBuf=cmdBuf.concat(fresh).slice(-5); if(handleCommands(cmdBuf)) cmdBuf=[]; return; }
+  if(!playing) return;                       /* angehalten: zuhören, aber nichts bewegen */
+  let moved=false;
+  for(const w of fresh){ if(followWord(w)) moved=true; vfPrev=w; }
+  if(moved) showProgress();
+  updVoiceHud();
 }
 function matchWord(a,b){
   if(!a||!b) return false;
@@ -425,22 +459,68 @@ function matchWord(a,b){
   if(a.length>=4&&b.length>=4&&(a.startsWith(b)||b.startsWith(a))) return true;
   return false;
 }
-function followVoice(spoken){
-  for(const w of spoken){
-    const start=matchedIdx+1, end=Math.min(tokens.length,start+40);
-    for(let j=start;j<end;j++){
-      if(!tokens[j].voice) continue;
-      if(matchWord(tokens[j].norm,w)){ matchedIdx=j; break; }
-    }
+function nextVoice(from,n){ const out=[]; for(let j=from+1;j<tokens.length&&out.length<n;j++) if(tokens[j].voice) out.push(j); return out; }
+function followWord(w){
+  const cand=nextVoice(matchedIdx,VF.WIN);
+  for(let k=0;k<cand.length;k++){
+    const j=cand[k];
+    if(!matchWord(tokens[j].norm,w)) continue;
+    /* Bestätigung durch das vorher gehörte Wort an der Stelle direkt davor */
+    const before=[k>0?cand[k-1]:matchedIdx, k>1?cand[k-2]:-1].filter(x=>x>=0);
+    const seq=!!vfPrev&&before.some(x=>matchWord(tokens[x].norm,vfPrev));
+    const solid=w.length>=4;
+    let ok;
+    if(vfHold) ok=seq||(k===0&&solid);           /* zurück im Text: vorsichtig wieder einsteigen */
+    else if(k===0) ok=true;                       /* genau das nächste Wort */
+    else if(k<=VF.NEAR) ok=solid||seq;            /* ein, zwei Wörter verschluckt */
+    else ok=seq;                                  /* weiter vorn nur mit zwei Wörtern in Folge */
+    if(ok){ matchedIdx=j; offScript=0; vfHold=false; return true; }
   }
-  if(matchedIdx>=0){
-    for(let i=0;i<tokens.length;i++){
-      tokens[i].el.classList.toggle('read',i<matchedIdx);
-      tokens[i].el.classList.toggle('now',i===matchedIdx);
-    }
-    const el=tokens[matchedIdx].el;
-    voiceTarget=Math.min(maxPos,Math.max(0,el.offsetTop-guidePx()+el.offsetHeight/2));
+  if(++offScript>=VF.HOLD_AFTER) vfHold=true;    /* freie Rede: Text bleibt stehen */
+  return false;
+}
+function showProgress(){
+  if(matchedIdx<0||!tokens[matchedIdx]) return;
+  const lo=Math.min(shownIdx,matchedIdx), hi=Math.max(shownIdx,matchedIdx);
+  for(let i=Math.max(0,lo);i<=hi&&i<tokens.length;i++){
+    tokens[i].el.classList.toggle('read',i<matchedIdx);
+    tokens[i].el.classList.toggle('now',i===matchedIdx);
   }
+  shownIdx=matchedIdx;
+  const el=tokens[matchedIdx].el;
+  const target=Math.min(maxPos,Math.max(0,el.offsetTop-guidePx()+el.offsetHeight/2));
+  /* nur vorwärts – ein Rücksprung würde den Redner aus dem Konzept bringen */
+  if(voiceTarget==null||target>voiceTarget) voiceTarget=Math.max(target,voiceTarget==null?pos:voiceTarget);
+}
+/* Stelle an der Leselinie als „hier geht es weiter“ übernehmen (nach Wischen, Pfeiltasten, Fortsetzen) */
+function anchorAtGuide(){
+  if(!tokens.length) return;
+  const y=pos+guidePx()-S.fontSize*S.lineHeight*.5;
+  let idx=tokens.findIndex(x=>x.el.offsetTop+x.el.offsetHeight>y);
+  if(idx<0) idx=tokens.length;
+  setAnchor(idx-1);
+}
+function setAnchor(i){
+  matchedIdx=Math.max(-1,Math.min(tokens.length-1,i)); offScript=0; vfHold=false; vfPrev=null;
+  tokens.forEach((x,n)=>{ x.el.classList.toggle('read',n<=matchedIdx); x.el.classList.remove('now'); });
+  shownIdx=matchedIdx; voiceTarget=null;
+}
+/* Wort antippen (nur bei aktiver Sprachfolge): ab diesem Wort weiterlesen */
+function tapWord(el){
+  if(!(voiceOn&&S.voiceMode==='follow')||!el||!el.classList||!el.classList.contains('w')) return false;
+  const i=tokens.findIndex(x=>x.el===el); if(i<0) return false;
+  setAnchor(i-1); playing=true; setPlayBtn();
+  voiceTarget=Math.min(maxPos,Math.max(0,el.offsetTop-guidePx()+el.offsetHeight/2));
+  el.classList.add('now'); updVoiceHud(); toast(t('voiceJump'),1200);
+  return true;
+}
+function setHold(h){ vfHold=h; offScript=0; updVoiceHud(); }
+function updVoiceHud(){
+  const on=voiceOn&&S.voiceMode==='follow';
+  $('#micDot').classList.toggle('hold',on&&(vfHold||!playing));
+  if(on){ const tl=$('#timeLeft');
+    if(!playing) tl.textContent=t('voicePaused'); else if(vfHold) tl.textContent=t('voiceWaiting');
+    else tl.innerHTML='<svg aria-hidden="true"><use href="#i-mic"/></svg>'; }
 }
 /* Sprachbefehle in der Erkennungssprache; Wortgrenzen auch bei Akzenten (á, è, ü …) */
 function handleCommands(words){
@@ -451,6 +531,8 @@ function handleCommands(words){
   else if(has(c.slower)){ S.speed=Math.max(10,Math.round(S.speed/1.25)); syncDrawer(); toast(t('speedToast',{v:S.speed+' px/s'}),800); }
   else if(has(c.stop)){ pause(); }
   else if(has(c.start)){ if(!playing) play(); }
+  else return false;
+  return true;   /* Befehl ausgeführt: Puffer leeren, damit er nicht doppelt greift */
 }
 
 /* ============ Kamera & Aufnahme ============ */

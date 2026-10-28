@@ -13,8 +13,8 @@ android {
         applicationId = "com.silverapplications.promptair"
         minSdk = 29          // Android 10: MediaStore ohne Speicherberechtigung
         targetSdk = 36       // Pflicht für Google Play seit 31.08.2026
-        versionCode = 3
-        versionName = "1.1.0"
+        versionCode = 4
+        versionName = "1.2.0"
     }
 
     buildTypes {

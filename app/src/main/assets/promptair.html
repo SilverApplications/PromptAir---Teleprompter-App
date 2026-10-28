@@ -240,6 +240,8 @@ html.intro body{overflow:hidden}
   #intro.run .sheen,#intro.run .glint,#intro.run .spark{animation:none}
   #intro.run .intro-sa{animation:none; opacity:1}
 }
+#micDot.live.hold{background:#E0A84B}
+
 </style>
 <script>(function(d){if(window.AndroidApp)d.classList.add('in-app');if(window.AndroidApp||/[?&]intro=1/.test(location.search))d.classList.add('intro');})(document.documentElement);</script>
 </head>
@@ -461,7 +463,7 @@ de:{
   playPause:'Start/Pause', slower:'Langsamer', faster:'Schneller', mic:'Sprachsteuerung', rec:'Aufnahme',
   cam:'Kamera', flip:'Kamera wechseln', mirror:'Spiegeln', restart:'Zum Anfang',
   speedToast:'Tempo: {v}', endOfScript:'Ende des Skripts', backToStart:'Zurück zum Anfang',
-  voiceFollowOn:'Der Text folgt jetzt deiner Stimme', voiceCmdOn:'Sprachbefehle aktiv: {cmds}',
+  voiceFollowOn:'Der Text folgt jetzt deiner Stimme', voiceWaiting:'wartet', voicePaused:'angehalten', voiceJump:'Weiter ab diesem Wort', voiceCmdOn:'Sprachbefehle aktiv: {cmds}',
   srUnsupported:'Spracherkennung wird von diesem Browser nicht unterstützt. Bitte Chrome verwenden.',
   micDenied:'Mikrofon-Zugriff verweigert. Bitte in den Einstellungen erlauben.',
   camDenied:'Kamera-Zugriff verweigert. Bitte in den Einstellungen erlauben.',
@@ -480,7 +482,7 @@ de:{
   mirrorH:'Horizontal spiegeln (Rig)', mirrorV:'Vertikal spiegeln', guideShow:'Leselinie anzeigen', focusDim:'Fokus-Abdunklung oben/unten',
   loop:'Am Ende von vorn beginnen', keepAwake:'Display wachhalten', countdown:'Countdown vor Start',
   srLang:'Sprache (Erkennung)', srAuto:'Wie App-Sprache', voiceMode:'Sprachmodus', vmFollow:'Text folgt der Stimme', vmCommands:'Sprachbefehle',
-  voiceSub:'„Text folgt der Stimme“: PromptAir hört mit und scrollt automatisch dorthin, wo du gerade liest. „Sprachbefehle“: sag {cmds}.',
+  voiceSub:'„Text folgt der Stimme“: PromptAir hört mit und scrollt automatisch dorthin, wo du gerade liest. Sprichst du frei (z. B. eine Anekdote), bleibt der Text stehen und läuft weiter, sobald du wieder im Text bist. Tippe auf ein Wort, um dort fortzufahren. „Sprachbefehle“: sag {cmds}.',
   camOpacity:'Text-Deckkraft im Kameramodus',
   helpTitle:'Bedienung',
   helpPad:'<b>Steuerkreuz:</b> Mitte = Start/Pause · oben (▲▲) = langsamer · unten (▼▼) = schneller · links = Mikrofon an/aus · rechts = Aufnahme (schaltet die Kamera bei Bedarf ein). Links daneben: Einstellungen und Zum Anfang · rechts daneben: Kamera, Kamera wechseln, Spiegeln.',
@@ -525,7 +527,7 @@ en:{
   playPause:'Play/Pause', slower:'Slower', faster:'Faster', mic:'Voice control', rec:'Record',
   cam:'Camera', flip:'Switch camera', mirror:'Mirror', restart:'Back to start',
   speedToast:'Speed: {v}', endOfScript:'End of script', backToStart:'Back to the start',
-  voiceFollowOn:'The text now follows your voice', voiceCmdOn:'Voice commands active: {cmds}',
+  voiceFollowOn:'The text now follows your voice', voiceWaiting:'waiting', voicePaused:'paused', voiceJump:'Continuing from this word', voiceCmdOn:'Voice commands active: {cmds}',
   srUnsupported:'This browser does not support speech recognition. Please use Chrome.',
   micDenied:'Microphone access denied. Please allow it in the settings.',
   camDenied:'Camera access denied. Please allow it in the settings.',
@@ -544,7 +546,7 @@ en:{
   mirrorH:'Mirror horizontally (rig)', mirrorV:'Mirror vertically', guideShow:'Show reading line', focusDim:'Focus dimming top/bottom',
   loop:'Start over at the end', keepAwake:'Keep screen on', countdown:'Countdown before start',
   srLang:'Language (recognition)', srAuto:'Same as app language', voiceMode:'Voice mode', vmFollow:'Text follows voice', vmCommands:'Voice commands',
-  voiceSub:'“Text follows voice”: PromptAir listens and scrolls to where you are reading. “Voice commands”: say {cmds}.',
+  voiceSub:'“Text follows voice”: PromptAir listens and scrolls to where you are reading. If you speak freely (an anecdote, say), the text stays put and moves on once you are back in the script. Tap a word to continue from there. “Voice commands”: say {cmds}.',
   camOpacity:'Text opacity in camera mode',
   helpTitle:'How to use',
   helpPad:'<b>Control pad:</b> centre = play/pause · up (▲▲) = slower · down (▼▼) = faster · left = microphone on/off · right = record (turns the camera on if needed). To the left: settings and back to start · to the right: camera, switch camera, mirror.',
@@ -589,7 +591,7 @@ es:{
   playPause:'Reproducir/Pausa', slower:'Más lento', faster:'Más rápido', mic:'Control por voz', rec:'Grabar',
   cam:'Cámara', flip:'Cambiar cámara', mirror:'Reflejar', restart:'Al principio',
   speedToast:'Velocidad: {v}', endOfScript:'Fin del guion', backToStart:'Vuelta al principio',
-  voiceFollowOn:'Ahora el texto sigue tu voz', voiceCmdOn:'Comandos de voz activos: {cmds}',
+  voiceFollowOn:'Ahora el texto sigue tu voz', voiceWaiting:'esperando', voicePaused:'en pausa', voiceJump:'Seguimos desde esta palabra', voiceCmdOn:'Comandos de voz activos: {cmds}',
   srUnsupported:'Este navegador no admite el reconocimiento de voz. Usa Chrome.',
   micDenied:'Acceso al micrófono denegado. Permítelo en los ajustes.',
   camDenied:'Acceso a la cámara denegado. Permítelo en los ajustes.',
@@ -608,7 +610,7 @@ es:{
   mirrorH:'Reflejar horizontalmente (rig)', mirrorV:'Reflejar verticalmente', guideShow:'Mostrar línea de lectura', focusDim:'Oscurecer arriba/abajo',
   loop:'Volver a empezar al final', keepAwake:'Mantener pantalla encendida', countdown:'Cuenta atrás',
   srLang:'Idioma (reconocimiento)', srAuto:'Igual que la app', voiceMode:'Modo de voz', vmFollow:'El texto sigue la voz', vmCommands:'Comandos de voz',
-  voiceSub:'«El texto sigue la voz»: PromptAir escucha y se desplaza hasta donde estás leyendo. «Comandos de voz»: di {cmds}.',
+  voiceSub:'«El texto sigue la voz»: PromptAir escucha y se desplaza hasta donde estás leyendo. Si hablas libremente (por ejemplo, una anécdota), el texto se queda quieto y sigue cuando vuelves al guion. Toca una palabra para continuar desde ahí. «Comandos de voz»: di {cmds}.',
   camOpacity:'Opacidad del texto en modo cámara',
   helpTitle:'Uso',
   helpPad:'<b>Cruceta:</b> centro = reproducir/pausa · arriba (▲▲) = más lento · abajo (▼▼) = más rápido · izquierda = micrófono sí/no · derecha = grabar (enciende la cámara si hace falta). A la izquierda: ajustes y al principio · a la derecha: cámara, cambiar cámara, reflejar.',
@@ -653,7 +655,7 @@ fr:{
   playPause:'Lecture/Pause', slower:'Plus lent', faster:'Plus rapide', mic:'Commande vocale', rec:'Enregistrer',
   cam:'Caméra', flip:'Changer de caméra', mirror:'Miroir', restart:'Au début',
   speedToast:'Vitesse : {v}', endOfScript:'Fin du script', backToStart:'Retour au début',
-  voiceFollowOn:'Le texte suit maintenant ta voix', voiceCmdOn:'Commandes vocales actives : {cmds}',
+  voiceFollowOn:'Le texte suit maintenant ta voix', voiceWaiting:'en attente', voicePaused:'en pause', voiceJump:'On reprend à ce mot', voiceCmdOn:'Commandes vocales actives : {cmds}',
   srUnsupported:'Ce navigateur ne prend pas en charge la reconnaissance vocale. Utilise Chrome.',
   micDenied:'Accès au micro refusé. Autorise-le dans les réglages.',
   camDenied:'Accès à la caméra refusé. Autorise-le dans les réglages.',
@@ -672,7 +674,7 @@ fr:{
   mirrorH:'Miroir horizontal (rig)', mirrorV:'Miroir vertical', guideShow:'Afficher la ligne de lecture', focusDim:'Assombrir haut/bas',
   loop:'Recommencer à la fin', keepAwake:'Garder l’écran allumé', countdown:'Compte à rebours',
   srLang:'Langue (reconnaissance)', srAuto:'Comme la langue de l’app', voiceMode:'Mode vocal', vmFollow:'Le texte suit la voix', vmCommands:'Commandes vocales',
-  voiceSub:'« Le texte suit la voix » : PromptAir écoute et défile jusqu’à l’endroit où tu lis. « Commandes vocales » : dis {cmds}.',
+  voiceSub:'« Le texte suit la voix » : PromptAir écoute et défile jusqu’à l’endroit où tu lis. Si tu parles librement (une anecdote, par ex.), le texte reste en place et repart dès que tu reviens au script. Touche un mot pour reprendre à cet endroit. « Commandes vocales » : dis {cmds}.',
   camOpacity:'Opacité du texte en mode caméra',
   helpTitle:'Utilisation',
   helpPad:'<b>Croix directionnelle :</b> centre = lecture/pause · haut (▲▲) = plus lent · bas (▼▼) = plus rapide · gauche = micro on/off · droite = enregistrer (allume la caméra si besoin). À gauche : réglages et au début · à droite : caméra, changer de caméra, miroir.',
@@ -717,7 +719,7 @@ pt:{
   playPause:'Reproduzir/Pausar', slower:'Mais devagar', faster:'Mais rápido', mic:'Controle por voz', rec:'Gravar',
   cam:'Câmera', flip:'Trocar câmera', mirror:'Espelhar', restart:'Ao início',
   speedToast:'Velocidade: {v}', endOfScript:'Fim do roteiro', backToStart:'De volta ao início',
-  voiceFollowOn:'Agora o texto segue sua voz', voiceCmdOn:'Comandos de voz ativos: {cmds}',
+  voiceFollowOn:'Agora o texto segue sua voz', voiceWaiting:'aguardando', voicePaused:'pausado', voiceJump:'Continuando desta palavra', voiceCmdOn:'Comandos de voz ativos: {cmds}',
   srUnsupported:'Este navegador não suporta reconhecimento de voz. Use o Chrome.',
   micDenied:'Acesso ao microfone negado. Permita nas configurações.',
   camDenied:'Acesso à câmera negado. Permita nas configurações.',
@@ -736,7 +738,7 @@ pt:{
   mirrorH:'Espelhar horizontalmente (rig)', mirrorV:'Espelhar verticalmente', guideShow:'Mostrar linha de leitura', focusDim:'Escurecer em cima/embaixo',
   loop:'Recomeçar no fim', keepAwake:'Manter tela ligada', countdown:'Contagem regressiva',
   srLang:'Idioma (reconhecimento)', srAuto:'Igual ao idioma do app', voiceMode:'Modo de voz', vmFollow:'Texto segue a voz', vmCommands:'Comandos de voz',
-  voiceSub:'“Texto segue a voz”: o PromptAir escuta e rola até onde você está lendo. “Comandos de voz”: diga {cmds}.',
+  voiceSub:'“Texto segue a voz”: o PromptAir escuta e rola até onde você está lendo. Se você falar livremente (uma anedota, por exemplo), o texto fica parado e continua quando você volta ao roteiro. Toque numa palavra para continuar dali. “Comandos de voz”: diga {cmds}.',
   camOpacity:'Opacidade do texto no modo câmera',
   helpTitle:'Como usar',
   helpPad:'<b>Direcional:</b> centro = reproduzir/pausar · cima (▲▲) = mais devagar · baixo (▼▼) = mais rápido · esquerda = microfone liga/desliga · direita = gravar (liga a câmera se necessário). À esquerda: configurações e ao início · à direita: câmera, trocar câmera, espelhar.',
@@ -781,7 +783,7 @@ it:{
   playPause:'Play/Pausa', slower:'Più lento', faster:'Più veloce', mic:'Comando vocale', rec:'Registra',
   cam:'Fotocamera', flip:'Cambia fotocamera', mirror:'Specchia', restart:'All’inizio',
   speedToast:'Velocità: {v}', endOfScript:'Fine del copione', backToStart:'Torna all’inizio',
-  voiceFollowOn:'Ora il testo segue la tua voce', voiceCmdOn:'Comandi vocali attivi: {cmds}',
+  voiceFollowOn:'Ora il testo segue la tua voce', voiceWaiting:'in attesa', voicePaused:'in pausa', voiceJump:'Si riparte da questa parola', voiceCmdOn:'Comandi vocali attivi: {cmds}',
   srUnsupported:'Questo browser non supporta il riconoscimento vocale. Usa Chrome.',
   micDenied:'Accesso al microfono negato. Consentilo nelle impostazioni.',
   camDenied:'Accesso alla fotocamera negato. Consentilo nelle impostazioni.',
@@ -800,7 +802,7 @@ it:{
   mirrorH:'Specchia orizzontalmente (rig)', mirrorV:'Specchia verticalmente', guideShow:'Mostra linea di lettura', focusDim:'Oscura sopra/sotto',
   loop:'Ricomincia alla fine', keepAwake:'Schermo sempre acceso', countdown:'Conto alla rovescia',
   srLang:'Lingua (riconoscimento)', srAuto:'Come la lingua dell’app', voiceMode:'Modalità vocale', vmFollow:'Il testo segue la voce', vmCommands:'Comandi vocali',
-  voiceSub:'«Il testo segue la voce»: PromptAir ascolta e scorre fino al punto in cui stai leggendo. «Comandi vocali»: di’ {cmds}.',
+  voiceSub:'«Il testo segue la voce»: PromptAir ascolta e scorre fino al punto in cui stai leggendo. Se parli liberamente (ad es. un aneddoto), il testo resta fermo e riparte quando torni al copione. Tocca una parola per continuare da lì. «Comandi vocali»: di’ {cmds}.',
   camOpacity:'Opacità del testo in modalità fotocamera',
   helpTitle:'Uso',
   helpPad:'<b>Croce direzionale:</b> centro = play/pausa · su (▲▲) = più lento · giù (▼▼) = più veloce · sinistra = microfono on/off · destra = registra (accende la fotocamera se serve). A sinistra: impostazioni e all’inizio · a destra: fotocamera, cambia fotocamera, specchia.',
@@ -853,8 +855,11 @@ if(!window.SpeechRecognition && !window.webkitSpeechRecognition && window.Androi
     this.lang='de-DE'; this.continuous=true; this.interimResults=true;
     this.onresult=null; this.onend=null; this.onerror=null;
     this.start=function(){
+      let utt=0;
       window.__speechCb=function(text,isFinal){
-        if(self.onresult) self.onresult({resultIndex:0,results:[[{transcript:text}]]});
+        const r=[{transcript:text}]; r.isFinal=!!isFinal;
+        if(self.onresult) self.onresult({resultIndex:0,results:[r],__utt:utt});
+        if(isFinal) utt++;
       };
       AndroidSpeech.start(self.lang);
     };
@@ -1058,7 +1063,7 @@ if(App){
 /* ============ Prompter ============ */
 const stage=$('#stage'), scroller=$('#scroller'), content=$('#content');
 let tokens=[], pos=0, playing=false, lastT=0, rafId=0, maxPos=0;
-let voiceOn=false, voiceTarget=null, matchedIdx=-1;
+let voiceOn=false, voiceTarget=null, matchedIdx=-1, shownIdx=-1, offScript=0, vfHold=false;
 let wakeLock=null;
 
 function applyStyle(){
@@ -1089,7 +1094,7 @@ function hexA(hex,a){ const n=parseInt(hex.slice(1),16);
 function guidePx(){ return stage.clientHeight*S.guidePos/100; }
 function measure(){ maxPos=Math.max(0,content.scrollHeight-stage.clientHeight); }
 
-const norm=s=>s.toLowerCase().replace(/[^\p{L}\p{N}']/gu,'');
+const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^\p{L}\p{N}]/gu,'');
 function buildContent(text){
   content.innerHTML=''; tokens=[];
   let bold=false, skip=false;
@@ -1120,14 +1125,18 @@ function setPos(v){ pos=Math.min(maxPos,Math.max(0,v));
   scroller.style.transform=`translate3d(0,${-pos}px,0)`;
   $('#progress').style.width=maxPos? (pos/maxPos*100)+'%':'0%';
   const rest=Math.max(0,(maxPos-pos)/S.speed);
-  if(voiceOn&&S.voiceMode==='follow') $('#timeLeft').innerHTML='<svg aria-hidden="true"><use href="#i-mic"/></svg>';
+  if(voiceOn&&S.voiceMode==='follow'){}       /* Anzeige übernimmt updVoiceHud() */
   else $('#timeLeft').textContent=Math.floor(rest/60)+':'+String(Math.round(rest%60)).padStart(2,'0');
 }
 function tick(ts){
   rafId=requestAnimationFrame(tick);
   const dt=Math.min(.05,(ts-lastT)/1000||0); lastT=ts;
-  if(voiceOn&&S.voiceMode==='follow'&&voiceTarget!=null){
-    setPos(pos+(voiceTarget-pos)*Math.min(1,dt*5));
+  if(voiceOn&&S.voiceMode==='follow'){
+    if(voiceTarget!=null&&Math.abs(voiceTarget-pos)>.5){
+      const lineH=S.fontSize*S.lineHeight, maxStep=lineH*4*dt;
+      const step=(voiceTarget-pos)*Math.min(1,dt*4);
+      setPos(pos+Math.max(-maxStep,Math.min(maxStep,step)));
+    }
   } else if(playing){
     setPos(pos+S.speed*dt);
     if(pos>=maxPos){ if(S.loop){ setPos(0);} else { pause(); toast(t('endOfScript')); showCtl(); } }
@@ -1135,10 +1144,11 @@ function tick(ts){
 }
 
 function play(){
+  if(voiceOn&&S.voiceMode==='follow'){ playing=true; setPlayBtn(); anchorAtGuide(); setHold(false); hideCtlSoon(); return; }
   if(pos<2 && S.countdown>0 && !(voiceOn&&S.voiceMode==='follow')){ runCountdown(()=>{ playing=true; setPlayBtn(); hideCtlSoon(); }); }
   else { playing=true; setPlayBtn(); hideCtlSoon(); }
 }
-function pause(){ playing=false; setPlayBtn(); showCtl(); }
+function pause(){ playing=false; setPlayBtn(); showCtl(); if(voiceOn&&S.voiceMode==='follow'){ voiceTarget=null; updVoiceHud(); } }
 function setPlayBtn(){ $('#btnPlay').innerHTML='<svg aria-hidden="true"><use href="#i-'+(playing?'pause':'play')+'"/></svg>'; }
 function runCountdown(done){
   const c=$('#countdown'), sp=c.querySelector('span'); let n=S.countdown;
@@ -1175,14 +1185,16 @@ stage.addEventListener('touchmove',e=>{
     setPos(tState.p+dy*dir); voiceTarget=null;
   }
 },{passive:true});
-stage.addEventListener('touchend',()=>{
+stage.addEventListener('touchend',e=>{
   if(tState&&!tState.pinch&&!tState.moved&&Date.now()-tState.t<400){
-    playing?pause():play(); showCtl();
-  }
+    const tp=e.changedTouches&&e.changedTouches[0];
+    if(!(tp&&tapWord(document.elementFromPoint(tp.clientX,tp.clientY)))){ playing?pause():play(); }
+    showCtl();
+  } else if(tState&&tState.moved&&voiceOn&&S.voiceMode==='follow'){ anchorAtGuide(); }
   if(tState&&tState.pinch) saveSettings();
   tState=null;
 },{passive:true});
-stage.addEventListener('click',e=>{ if(!('ontouchstart'in window)){ playing?pause():play(); showCtl(); }});
+stage.addEventListener('click',e=>{ if(!('ontouchstart'in window)){ if(!tapWord(e.target)){ playing?pause():play(); } showCtl(); }});
 
 /* Tastatur / Bluetooth-Fernbedienung – Pfeile wie das Steuerkreuz: hoch = langsamer, runter = schneller */
 document.addEventListener('keydown',e=>{
@@ -1192,8 +1204,8 @@ document.addEventListener('keydown',e=>{
   if(k==='Space'||k==='Enter'||k==='PageDown'){ e.preventDefault(); playing?pause():play(); }
   else if(k==='ArrowUp'){ e.preventDefault(); changeSpeed(-10); }
   else if(k==='ArrowDown'){ e.preventDefault(); changeSpeed(10); }
-  else if(k==='ArrowLeft'||k==='PageUp'){ setPos(pos-stage.clientHeight*.4); voiceTarget=null; }
-  else if(k==='ArrowRight'){ setPos(pos+stage.clientHeight*.4); voiceTarget=null; }
+  else if(k==='ArrowLeft'||k==='PageUp'){ setPos(pos-stage.clientHeight*.4); voiceTarget=null; anchorAtGuide(); }
+  else if(k==='ArrowRight'){ setPos(pos+stage.clientHeight*.4); voiceTarget=null; anchorAtGuide(); }
   else if(k==='Home'){ restart(); }
   else if(k==='KeyM'){ S.mirrorH=!S.mirrorH; applyStyle(); syncDrawer(); }
   else if(k==='KeyF'){ toggleFS(); }
@@ -1201,8 +1213,9 @@ document.addEventListener('keydown',e=>{
   showCtl();
 });
 
-function restart(){ pause(); setPos(0); matchedIdx=-1; voiceTarget=null;
-  tokens.forEach(x=>x.el.classList.remove('read','now')); }
+function restart(){ const vf=voiceOn&&S.voiceMode==='follow';
+  pause(); setPos(0); matchedIdx=-1; shownIdx=-1; voiceTarget=null; offScript=0; vfHold=false;
+  tokens.forEach(x=>x.el.classList.remove('read','now')); if(vf){ playing=true; setPlayBtn(); } updVoiceHud(); }
 
 /* ============ Spracherkennung ============ */
 let rec=null, recActive=false;
@@ -1250,20 +1263,43 @@ function startRec(){
   recActive=true; voiceOn=true;
   $('#micDot').classList.add('live'); $('#btnMic').classList.add('on');
   toast(S.voiceMode==='follow'?t('voiceFollowOn'):t('voiceCmdOn',{cmds:cmdHelp().replace(/<\/?b>/g,'')}),2600);
-  if(S.voiceMode==='follow'){ playing=false; setPlayBtn(); }
+  vfReset(); if(S.voiceMode==='follow'){ playing=true; setPlayBtn(); anchorAtGuide(); updVoiceHud(); }
 }
 function stopRec(){
-  recActive=false; voiceOn=false; voiceTarget=null;
+  recActive=false; voiceOn=false; voiceTarget=null; vfHold=false;
   try{ rec&&rec.stop(); }catch(e){}
-  $('#micDot').classList.remove('live'); $('#btnMic').classList.remove('on');
+  $('#micDot').classList.remove('live','hold'); $('#btnMic').classList.remove('on');
+  if(S.voiceMode==='follow'){ playing=false; setPlayBtn(); setPos(pos); }
 }
+/* ============ Sprachfolge 2.0 ============
+   Jedes erkannte Wort wird genau einmal ausgewertet (Zwischenergebnisse wiederholen
+   sonst dieselben Wörter und schieben den Text immer weiter). Gesucht wird nur in einem
+   kleinen Fenster hinter der aktuellen Stelle; weiter entfernte Treffer brauchen zwei
+   Wörter in Folge. Passt nichts (freie Rede, Anekdote), bleibt der Text einfach stehen. */
+const VF={WIN:10, NEAR:2, HOLD_AFTER:6};
+let vfSession=0, vfKey=null, vfDone=0, vfPrev=null, cmdBuf=[];
+function vfReset(){ vfSession++; vfKey=null; vfDone=0; vfPrev=null; cmdBuf=[]; offScript=0; vfHold=false; }
 function onSpeech(ev){
-  let latest='';
-  for(let i=ev.resultIndex;i<ev.results.length;i++) latest+=ev.results[i][0].transcript+' ';
-  const words=latest.trim().split(/\s+/).map(norm).filter(Boolean);
-  if(!words.length) return;
-  if(S.voiceMode==='commands'){ handleCommands(words); return; }
-  followVoice(words.slice(-8));
+  for(let i=ev.resultIndex;i<ev.results.length;i++){
+    const r=ev.results[i], key=(ev.__utt!=null)?'a'+ev.__utt:'w'+vfSession+':'+i;
+    vfFeed(key, r[0].transcript||'', !!r.isFinal);
+  }
+}
+function vfFeed(key,text,isFinal){
+  const words=text.trim().split(/\s+/).map(norm).filter(Boolean);
+  if(key!==vfKey||words.length<vfDone-1){ vfKey=key; vfDone=0; }
+  /* Das letzte Wort eines Zwischenergebnisses ist oft noch unsicher – erst übernehmen,
+     wenn danach weitergesprochen wird oder das Ergebnis endgültig ist (Sprachfolge). */
+  const upto=(isFinal||S.voiceMode==='commands')?words.length:Math.max(vfDone,words.length-1);
+  const fresh=words.slice(vfDone,upto); vfDone=Math.max(vfDone,upto);
+  if(isFinal){ vfKey=null; vfDone=0; }
+  if(!fresh.length) return;
+  if(S.voiceMode==='commands'){ cmdBuf=cmdBuf.concat(fresh).slice(-5); if(handleCommands(cmdBuf)) cmdBuf=[]; return; }
+  if(!playing) return;                       /* angehalten: zuhören, aber nichts bewegen */
+  let moved=false;
+  for(const w of fresh){ if(followWord(w)) moved=true; vfPrev=w; }
+  if(moved) showProgress();
+  updVoiceHud();
 }
 function matchWord(a,b){
   if(!a||!b) return false;
@@ -1271,22 +1307,68 @@ function matchWord(a,b){
   if(a.length>=4&&b.length>=4&&(a.startsWith(b)||b.startsWith(a))) return true;
   return false;
 }
-function followVoice(spoken){
-  for(const w of spoken){
-    const start=matchedIdx+1, end=Math.min(tokens.length,start+40);
-    for(let j=start;j<end;j++){
-      if(!tokens[j].voice) continue;
-      if(matchWord(tokens[j].norm,w)){ matchedIdx=j; break; }
-    }
+function nextVoice(from,n){ const out=[]; for(let j=from+1;j<tokens.length&&out.length<n;j++) if(tokens[j].voice) out.push(j); return out; }
+function followWord(w){
+  const cand=nextVoice(matchedIdx,VF.WIN);
+  for(let k=0;k<cand.length;k++){
+    const j=cand[k];
+    if(!matchWord(tokens[j].norm,w)) continue;
+    /* Bestätigung durch das vorher gehörte Wort an der Stelle direkt davor */
+    const before=[k>0?cand[k-1]:matchedIdx, k>1?cand[k-2]:-1].filter(x=>x>=0);
+    const seq=!!vfPrev&&before.some(x=>matchWord(tokens[x].norm,vfPrev));
+    const solid=w.length>=4;
+    let ok;
+    if(vfHold) ok=seq||(k===0&&solid);           /* zurück im Text: vorsichtig wieder einsteigen */
+    else if(k===0) ok=true;                       /* genau das nächste Wort */
+    else if(k<=VF.NEAR) ok=solid||seq;            /* ein, zwei Wörter verschluckt */
+    else ok=seq;                                  /* weiter vorn nur mit zwei Wörtern in Folge */
+    if(ok){ matchedIdx=j; offScript=0; vfHold=false; return true; }
   }
-  if(matchedIdx>=0){
-    for(let i=0;i<tokens.length;i++){
-      tokens[i].el.classList.toggle('read',i<matchedIdx);
-      tokens[i].el.classList.toggle('now',i===matchedIdx);
-    }
-    const el=tokens[matchedIdx].el;
-    voiceTarget=Math.min(maxPos,Math.max(0,el.offsetTop-guidePx()+el.offsetHeight/2));
+  if(++offScript>=VF.HOLD_AFTER) vfHold=true;    /* freie Rede: Text bleibt stehen */
+  return false;
+}
+function showProgress(){
+  if(matchedIdx<0||!tokens[matchedIdx]) return;
+  const lo=Math.min(shownIdx,matchedIdx), hi=Math.max(shownIdx,matchedIdx);
+  for(let i=Math.max(0,lo);i<=hi&&i<tokens.length;i++){
+    tokens[i].el.classList.toggle('read',i<matchedIdx);
+    tokens[i].el.classList.toggle('now',i===matchedIdx);
   }
+  shownIdx=matchedIdx;
+  const el=tokens[matchedIdx].el;
+  const target=Math.min(maxPos,Math.max(0,el.offsetTop-guidePx()+el.offsetHeight/2));
+  /* nur vorwärts – ein Rücksprung würde den Redner aus dem Konzept bringen */
+  if(voiceTarget==null||target>voiceTarget) voiceTarget=Math.max(target,voiceTarget==null?pos:voiceTarget);
+}
+/* Stelle an der Leselinie als „hier geht es weiter“ übernehmen (nach Wischen, Pfeiltasten, Fortsetzen) */
+function anchorAtGuide(){
+  if(!tokens.length) return;
+  const y=pos+guidePx()-S.fontSize*S.lineHeight*.5;
+  let idx=tokens.findIndex(x=>x.el.offsetTop+x.el.offsetHeight>y);
+  if(idx<0) idx=tokens.length;
+  setAnchor(idx-1);
+}
+function setAnchor(i){
+  matchedIdx=Math.max(-1,Math.min(tokens.length-1,i)); offScript=0; vfHold=false; vfPrev=null;
+  tokens.forEach((x,n)=>{ x.el.classList.toggle('read',n<=matchedIdx); x.el.classList.remove('now'); });
+  shownIdx=matchedIdx; voiceTarget=null;
+}
+/* Wort antippen (nur bei aktiver Sprachfolge): ab diesem Wort weiterlesen */
+function tapWord(el){
+  if(!(voiceOn&&S.voiceMode==='follow')||!el||!el.classList||!el.classList.contains('w')) return false;
+  const i=tokens.findIndex(x=>x.el===el); if(i<0) return false;
+  setAnchor(i-1); playing=true; setPlayBtn();
+  voiceTarget=Math.min(maxPos,Math.max(0,el.offsetTop-guidePx()+el.offsetHeight/2));
+  el.classList.add('now'); updVoiceHud(); toast(t('voiceJump'),1200);
+  return true;
+}
+function setHold(h){ vfHold=h; offScript=0; updVoiceHud(); }
+function updVoiceHud(){
+  const on=voiceOn&&S.voiceMode==='follow';
+  $('#micDot').classList.toggle('hold',on&&(vfHold||!playing));
+  if(on){ const tl=$('#timeLeft');
+    if(!playing) tl.textContent=t('voicePaused'); else if(vfHold) tl.textContent=t('voiceWaiting');
+    else tl.innerHTML='<svg aria-hidden="true"><use href="#i-mic"/></svg>'; }
 }
 /* Sprachbefehle in der Erkennungssprache; Wortgrenzen auch bei Akzenten (á, è, ü …) */
 function handleCommands(words){
@@ -1297,6 +1379,8 @@ function handleCommands(words){
   else if(has(c.slower)){ S.speed=Math.max(10,Math.round(S.speed/1.25)); syncDrawer(); toast(t('speedToast',{v:S.speed+' px/s'}),800); }
   else if(has(c.stop)){ pause(); }
   else if(has(c.start)){ if(!playing) play(); }
+  else return false;
+  return true;   /* Befehl ausgeführt: Puffer leeren, damit er nicht doppelt greift */
 }
 
 /* ============ Kamera & Aufnahme ============ */
