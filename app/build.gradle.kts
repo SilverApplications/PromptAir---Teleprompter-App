@@ -19,7 +19,12 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            // Seit 1.2.0: R8 entfernt ungenutzten Bibliothekscode. Damit verschwinden die
+            // veralteten Systemleisten-Aufrufe aus Material (BottomSheetDialog, SheetDialog,
+            // EdgeToEdgeUtils), die PromptAir nicht nutzt, und die App wird kleiner.
+            // Die Zuordnungsdatei (mapping.txt) steckt automatisch im App-Bundle.
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }

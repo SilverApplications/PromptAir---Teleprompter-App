@@ -12,6 +12,11 @@
 - Funktioniert in allen Sprachen: Akzente und Apostrophe werden beim Vergleich ignoriert.
 - Sprachbefehle werden nicht mehr mehrfach ausgelöst.
 
+**Technik**
+- R8 (Code-Verkleinerung) ist aktiv. Damit verschwindet der Play-Console-Hinweis „nicht mehr unterstützte APIs für die randlose Anzeige“. Die Aufrufe `setStatusBarColor`/`setNavigationBarColor` stammten aus ungenutzten Teilen von Material Components (BottomSheetDialog, SheetDialog, EdgeToEdgeUtils).
+- Die App wird kleiner. Die Zuordnungsdatei für Absturzberichte liegt im Bundle, damit verschwindet auch die Warnung „keine Offenlegungsdatei“.
+- **Vor dem Upload am Gerät testen:** alle Funktionen, die die App-Brücke nutzen (Mikrofon, Kamera und Aufnahme, Export, Skript laden, Vorlesen, Lizenzen, Sprache, Vollbild).
+
 **Außerdem**
 - Startleiste: Lange Beschriftungen (FR/IT/PT) brechen auf schmalen Handys um.
 - Editor: Die Statuszeile hat einen festen Hintergrund.
